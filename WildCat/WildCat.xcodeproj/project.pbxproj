@@ -12,6 +12,7 @@
 		7569B05F217B04AB0069EADB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7569B05D217B04AB0069EADB /* Main.storyboard */; };
 		7569B061217B04AE0069EADB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7569B060217B04AE0069EADB /* Assets.xcassets */; };
 		7569B064217B04AE0069EADB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7569B062217B04AE0069EADB /* LaunchScreen.storyboard */; };
+		7569B06D217B06540069EADB /* Kingfisher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7569B06C217B06540069EADB /* Kingfisher.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		7569B060217B04AE0069EADB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7569B063217B04AE0069EADB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7569B065217B04AE0069EADB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7569B06C217B06540069EADB /* Kingfisher.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kingfisher.framework; path = Carthage/Build/iOS/Kingfisher.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +31,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7569B06D217B06540069EADB /* Kingfisher.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +43,7 @@
 			children = (
 				7569B058217B04AB0069EADB /* WildCat */,
 				7569B057217B04AB0069EADB /* Products */,
+				7569B06B217B064F0069EADB /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -64,6 +68,14 @@
 			path = WildCat;
 			sourceTree = "<group>";
 		};
+		7569B06B217B064F0069EADB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7569B06C217B06540069EADB /* Kingfisher.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -74,6 +86,7 @@
 				7569B052217B04AB0069EADB /* Sources */,
 				7569B053217B04AB0069EADB /* Frameworks */,
 				7569B054217B04AB0069EADB /* Resources */,
+				7569B06E217B06660069EADB /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -129,6 +142,27 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		7569B06E217B06660069EADB /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/Kingfisher.framework",
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		7569B052217B04AB0069EADB /* Sources */ = {
@@ -284,7 +318,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = CWW3CV2X72;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = WildCat/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -302,7 +341,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = CWW3CV2X72;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = WildCat/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
