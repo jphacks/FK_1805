@@ -15,6 +15,7 @@
 		75D24197217F66D0007E81BD /* Pattern.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D24196217F66D0007E81BD /* Pattern.swift */; };
 		75D24199217F6BEE007E81BD /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75D24198217F6BEE007E81BD /* Realm.framework */; };
 		75D2419B217F6C00007E81BD /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75D2419A217F6C00007E81BD /* RealmSwift.framework */; };
+		75D2419D217F6EAA007E81BD /* Helper Files.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D2419C217F6EAA007E81BD /* Helper Files.swift */; };
 		FB463D5B217F5ED900C6B1CC /* AlarmTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB463D5A217F5ED900C6B1CC /* AlarmTableViewController.swift */; };
 		FB463D5D217F5EF400C6B1CC /* PhotosCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB463D5C217F5EF400C6B1CC /* PhotosCollectionViewController.swift */; };
 		FB463D5F217F5F0D00C6B1CC /* PatternTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB463D5E217F5F0D00C6B1CC /* PatternTableViewController.swift */; };
@@ -36,6 +37,7 @@
 		75D24196217F66D0007E81BD /* Pattern.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pattern.swift; sourceTree = "<group>"; };
 		75D24198217F6BEE007E81BD /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/iOS/Realm.framework; sourceTree = "<group>"; };
 		75D2419A217F6C00007E81BD /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/iOS/RealmSwift.framework; sourceTree = "<group>"; };
+		75D2419C217F6EAA007E81BD /* Helper Files.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Helper Files.swift"; sourceTree = "<group>"; };
 		FB463D5A217F5ED900C6B1CC /* AlarmTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmTableViewController.swift; sourceTree = "<group>"; };
 		FB463D5C217F5EF400C6B1CC /* PhotosCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosCollectionViewController.swift; sourceTree = "<group>"; };
 		FB463D5E217F5F0D00C6B1CC /* PatternTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatternTableViewController.swift; sourceTree = "<group>"; };
@@ -87,6 +89,7 @@
 				7569B060217B04AE0069EADB /* Assets.xcassets */,
 				7569B062217B04AE0069EADB /* LaunchScreen.storyboard */,
 				7569B065217B04AE0069EADB /* Info.plist */,
+				75D2419C217F6EAA007E81BD /* Helper Files.swift */,
 			);
 			path = WildCat;
 			sourceTree = "<group>";
@@ -263,6 +266,7 @@
 				FB463D5B217F5ED900C6B1CC /* AlarmTableViewController.swift in Sources */,
 				7569B05A217B04AB0069EADB /* AppDelegate.swift in Sources */,
 				FB463D5D217F5EF400C6B1CC /* PhotosCollectionViewController.swift in Sources */,
+				75D2419D217F6EAA007E81BD /* Helper Files.swift in Sources */,
 				75D24197217F66D0007E81BD /* Pattern.swift in Sources */,
 				75D24195217F66C9007E81BD /* Alarm.swift in Sources */,
 			);
