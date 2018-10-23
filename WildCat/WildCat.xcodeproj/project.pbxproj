@@ -12,6 +12,8 @@
 		7569B05F217B04AB0069EADB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7569B05D217B04AB0069EADB /* Main.storyboard */; };
 		7569B061217B04AE0069EADB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7569B060217B04AE0069EADB /* Assets.xcassets */; };
 		7569B064217B04AE0069EADB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7569B062217B04AE0069EADB /* LaunchScreen.storyboard */; };
+		75D24195217F66C9007E81BD /* Alarm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D24194217F66C9007E81BD /* Alarm.swift */; };
+		75D24197217F66D0007E81BD /* Pattern.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D24196217F66D0007E81BD /* Pattern.swift */; };
 		FB463D5B217F5ED900C6B1CC /* AlarmTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB463D5A217F5ED900C6B1CC /* AlarmTableViewController.swift */; };
 		FB463D5D217F5EF400C6B1CC /* PhotosCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB463D5C217F5EF400C6B1CC /* PhotosCollectionViewController.swift */; };
 		FB463D5F217F5F0D00C6B1CC /* PatternTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB463D5E217F5F0D00C6B1CC /* PatternTableViewController.swift */; };
@@ -30,6 +32,8 @@
 		7569B063217B04AE0069EADB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7569B065217B04AE0069EADB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7569B06C217B06540069EADB /* Kingfisher.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kingfisher.framework; path = Carthage/Build/iOS/Kingfisher.framework; sourceTree = "<group>"; };
+		75D24194217F66C9007E81BD /* Alarm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alarm.swift; sourceTree = "<group>"; };
+		75D24196217F66D0007E81BD /* Pattern.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pattern.swift; sourceTree = "<group>"; };
 		FB463D5A217F5ED900C6B1CC /* AlarmTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmTableViewController.swift; sourceTree = "<group>"; };
 		FB463D5C217F5EF400C6B1CC /* PhotosCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosCollectionViewController.swift; sourceTree = "<group>"; };
 		FB463D5E217F5F0D00C6B1CC /* PatternTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatternTableViewController.swift; sourceTree = "<group>"; };
@@ -71,9 +75,9 @@
 			isa = PBXGroup;
 			children = (
 				FB463D56217B1FFE00C6B1CC /* Controller */,
-				FB463D55217B1FF800C6B1CC /* View */,
-				FB463D54217B1F9B00C6B1CC /* Model */,
-				FB463D51217B1F5800C6B1CC /* Common */,
+				75D24192217F66B3007E81BD /* View */,
+				75D24191217F66AA007E81BD /* Model */,
+				75D24193217F66BC007E81BD /* Common */,
 				7569B059217B04AB0069EADB /* AppDelegate.swift */,
 				7569B05B217B04AB0069EADB /* ViewController.swift */,
 				7569B05D217B04AB0069EADB /* Main.storyboard */,
@@ -92,41 +96,27 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		FB463D51217B1F5800C6B1CC /* Common */ = {
+		75D24191217F66AA007E81BD /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				FB463D53217B1F8C00C6B1CC /* Extension */,
-				FB463D52217B1F7B00C6B1CC /* Request */,
-			);
-			path = Common;
-			sourceTree = "<group>";
-		};
-		FB463D52217B1F7B00C6B1CC /* Request */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Request;
-			sourceTree = "<group>";
-		};
-		FB463D53217B1F8C00C6B1CC /* Extension */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Extension;
-			sourceTree = "<group>";
-		};
-		FB463D54217B1F9B00C6B1CC /* Model */ = {
-			isa = PBXGroup;
-			children = (
+				75D24194217F66C9007E81BD /* Alarm.swift */,
+				75D24196217F66D0007E81BD /* Pattern.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
 		};
-		FB463D55217B1FF800C6B1CC /* View */ = {
+		75D24192217F66B3007E81BD /* View */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		75D24193217F66BC007E81BD /* Common */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Common;
 			sourceTree = "<group>";
 		};
 		FB463D56217B1FFE00C6B1CC /* Controller */ = {
@@ -267,6 +257,8 @@
 				FB463D5B217F5ED900C6B1CC /* AlarmTableViewController.swift in Sources */,
 				7569B05A217B04AB0069EADB /* AppDelegate.swift in Sources */,
 				FB463D5D217F5EF400C6B1CC /* PhotosCollectionViewController.swift in Sources */,
+				75D24197217F66D0007E81BD /* Pattern.swift in Sources */,
+				75D24195217F66C9007E81BD /* Alarm.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
