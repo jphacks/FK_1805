@@ -7,9 +7,10 @@
 //
 
 import Foundation
+import RealmSwift
 
-class Pattern {
-    @objc dynamic var id: Int?
-    @objc dynamic var description: String?
-    @objc dynamic var imagePath: String?
+class Pattern: Object {
+    @objc dynamic var id: Int = 0
+    @objc dynamic var message: String = ""
+    @objc dynamic var imagePath: String = ""
 }

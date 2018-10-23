@@ -7,9 +7,10 @@
 //
 
 import Foundation
+import RealmSwift
 
-class Alarm {
-    @objc dynamic var id: Int?
-    @objc dynamic var date: Date?
+class Alarm: Object {
+    @objc dynamic var id: Int = 0
+    @objc dynamic var date: Date = Date()
     @objc dynamic var pattern: Pattern?
 }
