@@ -21,6 +21,9 @@ class PhotosCollectionViewController: UICollectionViewController {
         collectionView.refreshControl = refreshControl
         refreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged)
 
+        for _ in 0..<25 {
+            images.append(SKPhoto.photoWithImage(UIImage(named: "black")!))
+        }
         getData()
     }
 
@@ -69,7 +72,7 @@ class PhotosCollectionViewController: UICollectionViewController {
         cell.configure(photo: photos[indexPath.item]) { (image) in
             if let image = image {
                 let skImage = SKPhoto.photoWithImage(image)
-                self.images.append(skImage)
+                self.images[indexPath.item] = skImage
             }
         }
     
@@ -81,7 +84,7 @@ class PhotosCollectionViewController: UICollectionViewController {
         let originImage = cell.imageView.image
 
         let browser = SKPhotoBrowser(originImage: originImage ?? UIImage(), photos: images, animatedFromView: cell)
-        browser.initializePageIndex(indexPath.row)
+        browser.initializePageIndex(indexPath.item)
         present(browser, animated: true, completion: {})
     }
 
