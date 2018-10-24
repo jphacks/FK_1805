@@ -12,18 +12,27 @@ import SKPhotoBrowser
 class PhotosCollectionViewController: UICollectionViewController {
 
     private let refreshControl = UIRefreshControl()
+
+    // Twitter
     private var photos = [Photo]()
-    private var images = [SKPhoto]()
+    private var skPhotos = [SKPhoto]()
+    private var status = SegmentStatus.Twitter
+
+    // Save
+    private var savePhotos = [Photo]()
+    private var saveSKPhotos = [SKPhoto]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        collectionView.refreshControl = refreshControl
-        refreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged)
+        self.collectionView.refreshControl = refreshControl
+        self.refreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged)
 
         for _ in 0..<25 {
-            images.append(SKPhoto.photoWithImage(UIImage(named: "black")!))
+            skPhotos.append(SKPhoto.photoWithImage(UIImage(named: "black")!))
         }
+        SKPhotoBrowserOptions.displayBackAndForwardButton = false
+        SKPhotoBrowserOptions.displayAction = false
         getData()
     }
 
@@ -31,7 +40,16 @@ class PhotosCollectionViewController: UICollectionViewController {
 
     }
 
-    @IBAction private func segmentAction(_ sender: Any) {
+    @IBAction private func segmentAction(_ sender: UISegmentedControl) {
+        if sender.selectedSegmentIndex == 0 {
+            self.status = .Twitter
+            self.collectionView.refreshControl = refreshControl
+            self.collectionView.reloadData()
+        } else {
+            self.status = .Save
+            self.collectionView.refreshControl = nil
+            self.collectionView.reloadData()
+        }
     }
 
     private func getData() {
@@ -64,16 +82,26 @@ class PhotosCollectionViewController: UICollectionViewController {
 
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return photos.count
+        switch status {
+        case .Twitter:
+            return photos.count
+        case .Save:
+            return savePhotos.count
+        }
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PhotoCell", for: indexPath) as! PhotoCell
-        cell.configure(photo: photos[indexPath.item]) { (image) in
-            if let image = image {
-                let skImage = SKPhoto.photoWithImage(image)
-                self.images[indexPath.item] = skImage
+        switch status {
+        case .Twitter:
+            cell.configure(photo: photos[indexPath.item]) { (image) in
+                if let image = image {
+                    let skImage = SKPhoto.photoWithImage(image)
+                    self.skPhotos[indexPath.item] = skImage
+                }
             }
+        case .Save:
+            break
         }
     
         return cell
@@ -82,10 +110,18 @@ class PhotosCollectionViewController: UICollectionViewController {
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let cell = collectionView.cellForItem(at: indexPath) as! PhotoCell
         let originImage = cell.imageView.image
+        var images = [SKPhoto]()
+
+        switch status {
+        case .Twitter:
+            images = skPhotos
+        case .Save:
+            images = saveSKPhotos
+        }
 
         let browser = SKPhotoBrowser(originImage: originImage ?? UIImage(), photos: images, animatedFromView: cell)
         browser.initializePageIndex(indexPath.item)
-        present(browser, animated: true, completion: {})
+        present(browser, animated: true, completion: nil)
     }
 
 }

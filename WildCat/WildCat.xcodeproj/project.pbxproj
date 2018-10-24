@@ -97,7 +97,6 @@
 		7569B04D217B04AB0069EADB = {
 			isa = PBXGroup;
 			children = (
-				75B1883021805EFA0081D7DE /* SKPhotoBrowser.framework */,
 				7569B058217B04AB0069EADB /* WildCat */,
 				7569B057217B04AB0069EADB /* Products */,
 				7569B06B217B064F0069EADB /* Frameworks */,
@@ -133,6 +132,7 @@
 		7569B06B217B064F0069EADB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				75B1883021805EFA0081D7DE /* SKPhotoBrowser.framework */,
 				75D2419A217F6C00007E81BD /* RealmSwift.framework */,
 				75D24198217F6BEE007E81BD /* Realm.framework */,
 				7569B06C217B06540069EADB /* Kingfisher.framework */,

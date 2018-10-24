@@ -15,6 +15,7 @@ class PhotoCell: UICollectionViewCell {
 
     func configure(photo: Photo, completion: @escaping (UIImage?) -> Void) {
         guard let url = URL(string: photo.imagePath) else {
+            self.imageView.image = UIImage(named: "black")
             return
         }
         self.imageView.kf.setImage(with: url) { (image, error, _, _) in
