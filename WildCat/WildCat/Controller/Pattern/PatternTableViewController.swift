@@ -10,6 +10,8 @@ import UIKit
 
 class PatternTableViewController: UITableViewController {
 
+    private var patterns:[Pattern] = []
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -20,27 +22,27 @@ class PatternTableViewController: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
 
+    /// set Datas
+    private func setup() {
+        self.tableView.reloadData()
+    }
+
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+        return self.patterns.count
     }
 
-    /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
+        let cell = tableView.dequeueReusableCell(withIdentifier: "patternCell", for: indexPath) as! PatternTableViewCell
+        let targetPattern = self.patterns[indexPath.item]
+        cell.update(target: targetPattern)
         return cell
     }
-    */
 
     /*
     // Override to support conditional editing of the table view.
