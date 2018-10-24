@@ -7,18 +7,24 @@
 //
 
 import UIKit
+import King
 
 class PatternTableViewCell: UITableViewCell {
 
+    @IBOutlet weak private var phtoImage: UIImageView!
+    @IBOutlet weak private var messageLabel: UILabel!
+
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
 
+    func update(target model: Pattern) {
+        self.messageLabel.text = model.message
+        let url = URL(string: model.imagePath)
+        self.imageView.kf.setImage(with: url)
+    }
 }

@@ -1,2 +1,2 @@
-github "onevcat/Kingfisher" ~> 4.0
+github "onevcat/Kingfisher" == 4.4.0
 github "realm/realm-cocoa" ~> 3.11

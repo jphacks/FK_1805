@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.30.1" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="guZ-oJ-5WM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.30.1" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="SGl-5A-2Gk">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -9,16 +9,32 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Table View Controller-->
+        <!--Navigation Controller-->
+        <scene sceneID="0sY-ta-YPC">
+            <objects>
+                <navigationController id="SGl-5A-2Gk" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Neo-Gm-EtI">
+                        <rect key="frame" x="0.0" y="20" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="guZ-oJ-5WM" kind="relationship" relationship="rootViewController" id="bLT-61-dFS"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BQb-yK-woQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-583" y="-276"/>
+        </scene>
+        <!--Pattern Table View Controller-->
         <scene sceneID="UT8-SL-GWx">
             <objects>
-                <tableViewController id="guZ-oJ-5WM" sceneMemberID="viewController">
+                <tableViewController id="guZ-oJ-5WM" customClass="PatternTableViewController" customModule="WildCat" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="ubu-Ko-JHw">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="105" id="soa-ip-p2I">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="patternCell" rowHeight="105" id="soa-ip-p2I" customClass="PatternTableViewCell" customModule="WildCat" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="414" height="105"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="soa-ip-p2I" id="Auc-WJ-stB">
@@ -48,6 +64,10 @@
                                         <constraint firstItem="bMm-H3-q5k" firstAttribute="leading" secondItem="Auc-WJ-stB" secondAttribute="leadingMargin" id="rUB-iD-g7i"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="messageLabel" destination="t9K-Cj-ITR" id="YLF-Se-xzo"/>
+                                    <outlet property="phtoImage" destination="bMm-H3-q5k" id="YBO-Fn-xkv"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -55,10 +75,11 @@
                             <outlet property="delegate" destination="guZ-oJ-5WM" id="2vl-ov-lQZ"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" id="H3c-z2-814"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hSB-KX-GLg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="152.80000000000001" y="143.47826086956522"/>
+            <point key="canvasLocation" x="287" y="-276"/>
         </scene>
     </scenes>
 </document>
