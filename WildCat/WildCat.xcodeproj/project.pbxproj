@@ -16,6 +16,7 @@
 		75D24199217F6BEE007E81BD /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75D24198217F6BEE007E81BD /* Realm.framework */; };
 		75D2419B217F6C00007E81BD /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75D2419A217F6C00007E81BD /* RealmSwift.framework */; };
 		75D2419D217F6EAA007E81BD /* Helper Files.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D2419C217F6EAA007E81BD /* Helper Files.swift */; };
+		E623539521803CBF009E0040 /* PatternTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E623539421803CBF009E0040 /* PatternTableViewCell.swift */; };
 		FB463D5B217F5ED900C6B1CC /* AlarmTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB463D5A217F5ED900C6B1CC /* AlarmTableViewController.swift */; };
 		FB463D5D217F5EF400C6B1CC /* PhotosCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB463D5C217F5EF400C6B1CC /* PhotosCollectionViewController.swift */; };
 		FB463D5F217F5F0D00C6B1CC /* PatternTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB463D5E217F5F0D00C6B1CC /* PatternTableViewController.swift */; };
@@ -38,6 +39,7 @@
 		75D24198217F6BEE007E81BD /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/iOS/Realm.framework; sourceTree = "<group>"; };
 		75D2419A217F6C00007E81BD /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/iOS/RealmSwift.framework; sourceTree = "<group>"; };
 		75D2419C217F6EAA007E81BD /* Helper Files.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Helper Files.swift"; sourceTree = "<group>"; };
+		E623539421803CBF009E0040 /* PatternTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PatternTableViewCell.swift; path = WildCat/View/PatternTableViewCell.swift; sourceTree = SOURCE_ROOT; };
 		FB463D5A217F5ED900C6B1CC /* AlarmTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmTableViewController.swift; sourceTree = "<group>"; };
 		FB463D5C217F5EF400C6B1CC /* PhotosCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosCollectionViewController.swift; sourceTree = "<group>"; };
 		FB463D5E217F5F0D00C6B1CC /* PatternTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatternTableViewController.swift; sourceTree = "<group>"; };
@@ -81,7 +83,7 @@
 			isa = PBXGroup;
 			children = (
 				FB463D56217B1FFE00C6B1CC /* Controller */,
-				75D24192217F66B3007E81BD /* View */,
+				E623539221803C89009E0040 /* View */,
 				75D24191217F66AA007E81BD /* Model */,
 				75D24193217F66BC007E81BD /* Common */,
 				7569B059217B04AB0069EADB /* AppDelegate.swift */,
@@ -113,18 +115,19 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		75D24192217F66B3007E81BD /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
 		75D24193217F66BC007E81BD /* Common */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			path = Common;
+			sourceTree = "<group>";
+		};
+		E623539221803C89009E0040 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E623539421803CBF009E0040 /* PatternTableViewCell.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		FB463D56217B1FFE00C6B1CC /* Controller */ = {
@@ -268,6 +271,7 @@
 				FB463D5D217F5EF400C6B1CC /* PhotosCollectionViewController.swift in Sources */,
 				75D2419D217F6EAA007E81BD /* Helper Files.swift in Sources */,
 				75D24197217F66D0007E81BD /* Pattern.swift in Sources */,
+				E623539521803CBF009E0040 /* PatternTableViewCell.swift in Sources */,
 				75D24195217F66C9007E81BD /* Alarm.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
