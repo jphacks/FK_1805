@@ -11,6 +11,7 @@
 		7569B05F217B04AB0069EADB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7569B05D217B04AB0069EADB /* Main.storyboard */; };
 		7569B061217B04AE0069EADB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7569B060217B04AE0069EADB /* Assets.xcassets */; };
 		7569B064217B04AE0069EADB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7569B062217B04AE0069EADB /* LaunchScreen.storyboard */; };
+		75B18819218041230081D7DE /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75B18818218041230081D7DE /* UIColor+Extension.swift */; };
 		75D24195217F66C9007E81BD /* Alarm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D24194217F66C9007E81BD /* Alarm.swift */; };
 		75D24197217F66D0007E81BD /* Pattern.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D24196217F66D0007E81BD /* Pattern.swift */; };
 		75D24199217F6BEE007E81BD /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75D24198217F6BEE007E81BD /* Realm.framework */; };
@@ -34,6 +35,7 @@
 		7569B063217B04AE0069EADB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7569B065217B04AE0069EADB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7569B06C217B06540069EADB /* Kingfisher.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kingfisher.framework; path = Carthage/Build/iOS/Kingfisher.framework; sourceTree = "<group>"; };
+		75B18818218041230081D7DE /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		75D24194217F66C9007E81BD /* Alarm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alarm.swift; sourceTree = "<group>"; };
 		75D24196217F66D0007E81BD /* Pattern.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pattern.swift; sourceTree = "<group>"; };
 		75D24198217F6BEE007E81BD /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/iOS/Realm.framework; sourceTree = "<group>"; };
@@ -126,6 +128,7 @@
 			isa = PBXGroup;
 			children = (
 				E623539421803CBF009E0040 /* PatternTableViewCell.swift */,
+				75B18818218041230081D7DE /* UIColor+Extension.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -273,6 +276,7 @@
 				75D24197217F66D0007E81BD /* Pattern.swift in Sources */,
 				E623539521803CBF009E0040 /* PatternTableViewCell.swift in Sources */,
 				75D24195217F66C9007E81BD /* Alarm.swift in Sources */,
+				75B18819218041230081D7DE /* UIColor+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
