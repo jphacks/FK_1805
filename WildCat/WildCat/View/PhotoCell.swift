@@ -11,9 +11,13 @@ import Kingfisher
 
 class PhotoCell: UICollectionViewCell {
     
-    @IBOutlet private weak var imageView: UIImageView!
+    @IBOutlet weak var imageView: UIImageView!
 
-    func configure(photo: Photo) {
-        self.imageView.kf.setImage(with: URL(string: photo.imagePath)!)
+    func configure(photo: Photo, completion: @escaping (UIImage?) -> Void) {
+        self.imageView.kf.setImage(with: URL(string: photo.imagePath)!) { (image, error, _, _) in
+            if error == nil {
+                completion(image)
+            }
+        }
     }
 }

@@ -20,6 +20,8 @@
 		75B1882D218056D20081D7DE /* Kingfisher.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7569B06C217B06540069EADB /* Kingfisher.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		75B1882E218056EA0081D7DE /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75D24198217F6BEE007E81BD /* Realm.framework */; };
 		75B1882F218056EA0081D7DE /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 75D24198217F6BEE007E81BD /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		75B1883121805EFA0081D7DE /* SKPhotoBrowser.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75B1883021805EFA0081D7DE /* SKPhotoBrowser.framework */; };
+		75B1883221805EFA0081D7DE /* SKPhotoBrowser.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 75B1883021805EFA0081D7DE /* SKPhotoBrowser.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		75D24195217F66C9007E81BD /* Alarm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D24194217F66C9007E81BD /* Alarm.swift */; };
 		75D24197217F66D0007E81BD /* Pattern.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D24196217F66D0007E81BD /* Pattern.swift */; };
 		75D2419D217F6EAA007E81BD /* Helper Files.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D2419C217F6EAA007E81BD /* Helper Files.swift */; };
@@ -40,6 +42,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				75B1883221805EFA0081D7DE /* SKPhotoBrowser.framework in Embed Frameworks */,
 				75B1882F218056EA0081D7DE /* Realm.framework in Embed Frameworks */,
 				75B1882D218056D20081D7DE /* Kingfisher.framework in Embed Frameworks */,
 				75B1882A218056710081D7DE /* RealmSwift.framework in Embed Frameworks */,
@@ -60,6 +63,7 @@
 		75B18820218053440081D7DE /* PhotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCell.swift; sourceTree = "<group>"; };
 		75B18822218053BD0081D7DE /* Photo.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Photo.json; sourceTree = "<group>"; };
 		75B18824218054550081D7DE /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
+		75B1883021805EFA0081D7DE /* SKPhotoBrowser.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SKPhotoBrowser.framework; path = Carthage/Build/iOS/SKPhotoBrowser.framework; sourceTree = "<group>"; };
 		75D24194217F66C9007E81BD /* Alarm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alarm.swift; sourceTree = "<group>"; };
 		75D24196217F66D0007E81BD /* Pattern.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pattern.swift; sourceTree = "<group>"; };
 		75D24198217F6BEE007E81BD /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/iOS/Realm.framework; sourceTree = "<group>"; };
@@ -80,6 +84,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				75B1883121805EFA0081D7DE /* SKPhotoBrowser.framework in Frameworks */,
 				75B1882E218056EA0081D7DE /* Realm.framework in Frameworks */,
 				75B18829218056710081D7DE /* RealmSwift.framework in Frameworks */,
 				75B1882C218056D20081D7DE /* Kingfisher.framework in Frameworks */,
@@ -92,6 +97,7 @@
 		7569B04D217B04AB0069EADB = {
 			isa = PBXGroup;
 			children = (
+				75B1883021805EFA0081D7DE /* SKPhotoBrowser.framework */,
 				7569B058217B04AB0069EADB /* WildCat */,
 				7569B057217B04AB0069EADB /* Products */,
 				7569B06B217B064F0069EADB /* Frameworks */,
@@ -282,6 +288,7 @@
 				"$(SRCROOT)/Carthage/Build/iOS/Kingfisher.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Realm.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/RealmSwift.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/SKPhotoBrowser.framework",
 			);
 			outputFileListPaths = (
 			);

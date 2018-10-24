@@ -7,11 +7,13 @@
 //
 
 import UIKit
+import SKPhotoBrowser
 
 class PhotosCollectionViewController: UICollectionViewController {
 
     private let refreshControl = UIRefreshControl()
-    private var photos: [Photo] = []
+    private var photos = [Photo]()
+    private var images = [SKPhoto]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -64,9 +66,23 @@ class PhotosCollectionViewController: UICollectionViewController {
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PhotoCell", for: indexPath) as! PhotoCell
-        cell.configure(photo: photos[indexPath.item])
+        cell.configure(photo: photos[indexPath.item]) { (image) in
+            if let image = image {
+                let skImage = SKPhoto.photoWithImage(image)
+                self.images.append(skImage)
+            }
+        }
     
         return cell
+    }
+
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let cell = collectionView.cellForItem(at: indexPath) as! PhotoCell
+        let originImage = cell.imageView.image
+
+        let browser = SKPhotoBrowser(originImage: originImage ?? UIImage(), photos: images, animatedFromView: cell)
+        browser.initializePageIndex(indexPath.row)
+        present(browser, animated: true, completion: {})
     }
 
 }
