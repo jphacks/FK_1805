@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import King
+import Kingfisher
 
 class PatternTableViewCell: UITableViewCell {
 
