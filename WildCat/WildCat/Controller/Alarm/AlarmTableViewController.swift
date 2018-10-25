@@ -34,15 +34,12 @@ class AlarmTableViewController: UITableViewController {
         return self.alarms.count
     }
 
-    /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
+        let cell = tableView.dequeueReusableCell(withIdentifier: "alarmCell", for: indexPath) as! AlarmTableViewCell
+        let targetAlarm = self.alarms[indexPath.item]
+        cell.update(target: targetAlarm)
         return cell
     }
-    */
 
     /*
     // Override to support conditional editing of the table view.
