@@ -120,8 +120,21 @@ class PhotosCollectionViewController: UICollectionViewController {
         }
 
         let browser = SKPhotoBrowser(originImage: originImage ?? UIImage(), photos: images, animatedFromView: cell)
+        let addImage = UIImageView(image: UIImage(named: "Add"))
+        addImage.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(save)))
+        addImage.translatesAutoresizingMaskIntoConstraints = false
+        browser.view.addSubview(addImage)
+        let customMargins = browser.view.layoutMarginsGuide
+        addImage.trailingAnchor.constraint(equalTo: customMargins.trailingAnchor, constant: -16).isActive = true
+        addImage.bottomAnchor.constraint(equalTo: customMargins.bottomAnchor, constant: -40).isActive = true
+        addImage.heightAnchor.constraint(equalToConstant: 20.0).isActive = true
+        addImage.widthAnchor.constraint(equalToConstant: 40.0).isActive = true
         browser.initializePageIndex(indexPath.item)
         present(browser, animated: true, completion: nil)
+    }
+
+    @objc private func save(sender: UITapGestureRecognizer) {
+        print("save")
     }
 
 }
