@@ -19,6 +19,7 @@ class PhotosCollectionViewController: UICollectionViewController, SKPhotoBrowser
     private var status = SegmentStatus.Twitter
 
     // Save
+    private var saveImages = [UIImage]()
     private var savePhotos = [Photo]()
     private var saveSKPhotos = [SKPhoto]()
     private var index: Int = 0
@@ -35,6 +36,17 @@ class PhotosCollectionViewController: UICollectionViewController, SKPhotoBrowser
         SKPhotoBrowserOptions.displayBackAndForwardButton = false
         SKPhotoBrowserOptions.displayAction = false
         getData()
+        localRefresh()
+    }
+
+    private func localRefresh() {
+        LocalPhoto.load { (images) in
+            self.saveImages = images
+            self.saveSKPhotos = []
+            for image in images {
+                self.saveSKPhotos.append(SKPhoto.photoWithImage(image))
+            }
+        }
     }
 
     @objc private func refresh() {
@@ -87,7 +99,7 @@ class PhotosCollectionViewController: UICollectionViewController, SKPhotoBrowser
         case .Twitter:
             return photos.count
         case .Save:
-            return savePhotos.count
+            return saveImages.count
         }
     }
 
@@ -102,6 +114,7 @@ class PhotosCollectionViewController: UICollectionViewController, SKPhotoBrowser
                 }
             }
         case .Save:
+            cell.imageView.image = saveImages[indexPath.item]
             break
         }
     
@@ -116,24 +129,26 @@ class PhotosCollectionViewController: UICollectionViewController, SKPhotoBrowser
         switch status {
         case .Twitter:
             images = skPhotos
+            let browser = SKPhotoBrowser(originImage: originImage ?? UIImage(), photos: images, animatedFromView: cell)
+            browser.delegate = self
+            let addImage = UIImageView(image: UIImage(named: "Add"))
+            addImage.isUserInteractionEnabled = true
+            addImage.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(save)))
+            addImage.translatesAutoresizingMaskIntoConstraints = false
+            browser.view.addSubview(addImage)
+            let customMargins = browser.view.layoutMarginsGuide
+            addImage.trailingAnchor.constraint(equalTo: customMargins.trailingAnchor, constant: -16).isActive = true
+            addImage.bottomAnchor.constraint(equalTo: customMargins.bottomAnchor, constant: -40).isActive = true
+            addImage.heightAnchor.constraint(equalToConstant: 20.0).isActive = true
+            addImage.widthAnchor.constraint(equalToConstant: 40.0).isActive = true
+            browser.initializePageIndex(indexPath.item)
+            present(browser, animated: true, completion: nil)
         case .Save:
             images = saveSKPhotos
+            let browser = SKPhotoBrowser(originImage: originImage ?? UIImage(), photos: images, animatedFromView: cell)
+            browser.initializePageIndex(indexPath.item)
+            present(browser, animated: true, completion: nil)
         }
-
-        let browser = SKPhotoBrowser(originImage: originImage ?? UIImage(), photos: images, animatedFromView: cell)
-        browser.delegate = self
-        let addImage = UIImageView(image: UIImage(named: "Add"))
-        addImage.isUserInteractionEnabled = true
-        addImage.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(save)))
-        addImage.translatesAutoresizingMaskIntoConstraints = false
-        browser.view.addSubview(addImage)
-        let customMargins = browser.view.layoutMarginsGuide
-        addImage.trailingAnchor.constraint(equalTo: customMargins.trailingAnchor, constant: -16).isActive = true
-        addImage.bottomAnchor.constraint(equalTo: customMargins.bottomAnchor, constant: -40).isActive = true
-        addImage.heightAnchor.constraint(equalToConstant: 20.0).isActive = true
-        addImage.widthAnchor.constraint(equalToConstant: 40.0).isActive = true
-        browser.initializePageIndex(indexPath.item)
-        present(browser, animated: true, completion: nil)
     }
 
     func didShowPhotoAtIndex(_ browser: SKPhotoBrowser, index: Int) {
@@ -143,6 +158,7 @@ class PhotosCollectionViewController: UICollectionViewController, SKPhotoBrowser
     @objc private func save(sender: UITapGestureRecognizer) {
         LocalPhoto.savePhoto(skPhotos[self.index].underlyingImage, toAlbum: "WildCat") { (imagePath) in
             print(imagePath ?? "")
+            self.localRefresh()
         }
     }
 
