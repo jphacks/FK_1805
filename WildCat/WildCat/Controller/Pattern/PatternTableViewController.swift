@@ -14,16 +14,13 @@ class PatternTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        self.setup()
     }
 
     /// set Datas
     private func setup() {
+        let data = Array(Pattern.read())
+        self.patterns = data
         self.tableView.reloadData()
     }
 
