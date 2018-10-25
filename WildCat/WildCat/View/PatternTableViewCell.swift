@@ -24,7 +24,7 @@ class PatternTableViewCell: UITableViewCell {
 
     func update(target model: Pattern) {
         self.messageLabel.text = model.message
-        let url = URL(string: model.imagePath)
-        self.imageView.kf.setImage(with: url)
+        let url = URL(string: model.imagePath)!
+        self.imageView!.kf.setImage(with: url)
     }
 }

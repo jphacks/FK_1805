@@ -7,3 +7,8 @@
 //
 
 import Foundation
+
+enum SegmentStatus {
+    case Twitter
+    case Save
+}
