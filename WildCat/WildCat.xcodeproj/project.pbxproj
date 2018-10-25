@@ -33,6 +33,7 @@
 		FB463D61217F5F3100C6B1CC /* AlarmTableViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB463D60217F5F3100C6B1CC /* AlarmTableViewController.storyboard */; };
 		FB463D63217F5F5200C6B1CC /* PhotosCollectionViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB463D62217F5F5200C6B1CC /* PhotosCollectionViewController.storyboard */; };
 		FB463D65217F5F5F00C6B1CC /* PatternTableViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB463D64217F5F5F00C6B1CC /* PatternTableViewController.storyboard */; };
+		FBA80E8F218191EB006E6183 /* AlarmTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA80E8E218191EB006E6183 /* AlarmTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -77,6 +78,7 @@
 		FB463D60217F5F3100C6B1CC /* AlarmTableViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AlarmTableViewController.storyboard; sourceTree = "<group>"; };
 		FB463D62217F5F5200C6B1CC /* PhotosCollectionViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PhotosCollectionViewController.storyboard; sourceTree = "<group>"; };
 		FB463D64217F5F5F00C6B1CC /* PatternTableViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PatternTableViewController.storyboard; sourceTree = "<group>"; };
+		FBA80E8E218191EB006E6183 /* AlarmTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -161,6 +163,7 @@
 		E623539221803C89009E0040 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				FBA80E8E218191EB006E6183 /* AlarmTableViewCell.swift */,
 				E623539421803CBF009E0040 /* PatternTableViewCell.swift */,
 				75B18820218053440081D7DE /* PhotoCell.swift */,
 			);
@@ -316,6 +319,7 @@
 				75D24197217F66D0007E81BD /* Pattern.swift in Sources */,
 				E623539521803CBF009E0040 /* PatternTableViewCell.swift in Sources */,
 				75D24195217F66C9007E81BD /* Alarm.swift in Sources */,
+				FBA80E8F218191EB006E6183 /* AlarmTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
