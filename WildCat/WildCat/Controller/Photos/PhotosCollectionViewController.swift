@@ -9,7 +9,7 @@
 import UIKit
 import SKPhotoBrowser
 
-class PhotosCollectionViewController: UICollectionViewController {
+class PhotosCollectionViewController: UICollectionViewController, SKPhotoBrowserDelegate {
 
     private let refreshControl = UIRefreshControl()
 
@@ -21,6 +21,7 @@ class PhotosCollectionViewController: UICollectionViewController {
     // Save
     private var savePhotos = [Photo]()
     private var saveSKPhotos = [SKPhoto]()
+    private var index: Int = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -120,7 +121,9 @@ class PhotosCollectionViewController: UICollectionViewController {
         }
 
         let browser = SKPhotoBrowser(originImage: originImage ?? UIImage(), photos: images, animatedFromView: cell)
+        browser.delegate = self
         let addImage = UIImageView(image: UIImage(named: "Add"))
+        addImage.isUserInteractionEnabled = true
         addImage.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(save)))
         addImage.translatesAutoresizingMaskIntoConstraints = false
         browser.view.addSubview(addImage)
@@ -133,8 +136,14 @@ class PhotosCollectionViewController: UICollectionViewController {
         present(browser, animated: true, completion: nil)
     }
 
+    func didShowPhotoAtIndex(_ browser: SKPhotoBrowser, index: Int) {
+        self.index = index
+    }
+
     @objc private func save(sender: UITapGestureRecognizer) {
-        print("save")
+        LocalPhoto.savePhoto(skPhotos[self.index].underlyingImage, toAlbum: "WildCat") { (imagePath) in
+            print(imagePath ?? "")
+        }
     }
 
 }
