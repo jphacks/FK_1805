@@ -65,4 +65,26 @@ class LocalPhoto {
             }
         }
     }
+
+    class func load(completion: @escaping ([UIImage]) -> Void) {
+        var photos: [PHAsset] = []
+        LocalPhoto.findOrCreateAlbum(name: "WildCat") { (album) in
+            if let album = album {
+                let asset = PHAsset.fetchAssets(in: album, options: nil)
+                asset.enumerateObjects { (image, _, _) in
+                    photos.append(image)
+                }
+
+                let manager = PHImageManager()
+                var images = [UIImage]()
+                for photo in photos {
+                    print("width: \(photo.pixelWidth), height: \(photo.pixelHeight)")
+                    manager.requestImage(for: photo, targetSize: CGSize(width: photo.pixelWidth, height: photo.pixelHeight), contentMode: .aspectFit, options: nil) { (image, info) in
+                        images.append(image!)
+                    }
+                    completion(images)
+                }
+            }
+        }
+    }
 }
