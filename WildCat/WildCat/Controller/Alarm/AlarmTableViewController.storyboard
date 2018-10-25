@@ -61,6 +61,12 @@
                                         <constraint firstAttribute="bottomMargin" secondItem="0lU-5H-v9C" secondAttribute="bottom" constant="10" id="kcB-eG-VX5"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="alarmSwitch" destination="BBi-5q-j5Y" id="7jN-1g-Ltq"/>
+                                    <outlet property="messageLabel" destination="0lU-5H-v9C" id="kO6-8h-wSU"/>
+                                    <outlet property="photoImage" destination="faC-mj-dd6" id="LUy-Qv-mAG"/>
+                                    <outlet property="timeLabel" destination="qzc-fG-6ZF" id="WC7-M9-Akq"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -68,7 +74,9 @@
                             <outlet property="delegate" destination="mnW-Hy-IPb" id="Vfj-R6-SIV"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Alarm View Controller" id="8S3-86-WQl"/>
+                    <navigationItem key="navigationItem" title="Alarm View Controller" id="8S3-86-WQl">
+                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="add" id="Lqf-Sj-yeJ"/>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OLl-dn-qXc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

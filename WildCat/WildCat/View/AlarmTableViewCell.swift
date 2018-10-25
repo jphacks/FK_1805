@@ -10,6 +10,13 @@ import UIKit
 
 class AlarmTableViewCell: UITableViewCell {
 
+    // MARK: - Propaties
+
+    @IBOutlet weak var timeLabel: UILabel!
+    @IBOutlet weak var photoImage: UIImageView!
+    @IBOutlet weak var messageLabel: UILabel!
+    @IBOutlet weak var alarmSwitch: UISwitch!
+
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
