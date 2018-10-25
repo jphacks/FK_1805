@@ -16,6 +16,11 @@ class Pattern: Object {
 }
 
 extension Pattern {
+    class func read() -> Results<Pattern> {
+        let realm = try! Realm()
+        return realm.objects(Pattern.self)
+    }
+
     class func add(pattern: Pattern) {
         do {
             let realm = try Realm()
