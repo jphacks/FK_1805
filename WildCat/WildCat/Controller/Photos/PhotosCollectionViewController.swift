@@ -7,23 +7,63 @@
 //
 
 import UIKit
+import SKPhotoBrowser
 
 class PhotosCollectionViewController: UICollectionViewController {
 
     private let refreshControl = UIRefreshControl()
 
+    // Twitter
+    private var photos = [Photo]()
+    private var skPhotos = [SKPhoto]()
+    private var status = SegmentStatus.Twitter
+
+    // Save
+    private var savePhotos = [Photo]()
+    private var saveSKPhotos = [SKPhoto]()
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        collectionView.refreshControl = refreshControl
-        refreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged)
+        self.collectionView.refreshControl = refreshControl
+        self.refreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged)
+
+        for _ in 0..<25 {
+            skPhotos.append(SKPhoto.photoWithImage(UIImage(named: "black")!))
+        }
+        SKPhotoBrowserOptions.displayBackAndForwardButton = false
+        SKPhotoBrowserOptions.displayAction = false
+        getData()
     }
 
     @objc private func refresh() {
 
     }
 
-    @IBAction func segmentAction(_ sender: Any) {
+    @IBAction private func segmentAction(_ sender: UISegmentedControl) {
+        if sender.selectedSegmentIndex == 0 {
+            self.status = .Twitter
+            self.collectionView.refreshControl = refreshControl
+            self.collectionView.reloadData()
+        } else {
+            self.status = .Save
+            self.collectionView.refreshControl = nil
+            self.collectionView.reloadData()
+        }
+    }
+
+    private func getData() {
+        guard let path = Bundle.main.path(forResource: "Photo", ofType: "json") else { return }
+        let url = URL(fileURLWithPath: path)
+        do {
+            let data = try Data(contentsOf: url)
+            let photos = try
+                JSONDecoder().decode([Photo].self, from: data)
+            self.photos = photos
+            self.collectionView.reloadData()
+        } catch  {
+            print(error)
+        }
     }
 
     /*
@@ -36,56 +76,52 @@ class PhotosCollectionViewController: UICollectionViewController {
     }
     */
 
-    // MARK: UICollectionViewDataSource
-
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of items
-        return 0
+        switch status {
+        case .Twitter:
+            return photos.count
+        case .Save:
+            return savePhotos.count
+        }
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PhotoCell", for: indexPath)
-    
-        // Configure the cell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PhotoCell", for: indexPath) as! PhotoCell
+        switch status {
+        case .Twitter:
+            cell.configure(photo: photos[indexPath.item]) { (image) in
+                if let image = image {
+                    let skImage = SKPhoto.photoWithImage(image)
+                    self.skPhotos[indexPath.item] = skImage
+                }
+            }
+        case .Save:
+            break
+        }
     
         return cell
     }
 
-    // MARK: UICollectionViewDelegate
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let cell = collectionView.cellForItem(at: indexPath) as! PhotoCell
+        let originImage = cell.imageView.image
+        var images = [SKPhoto]()
 
-    /*
-    // Uncomment this method to specify if the specified item should be highlighted during tracking
-    override func collectionView(_ collectionView: UICollectionView, shouldHighlightItemAt indexPath: IndexPath) -> Bool {
-        return true
-    }
-    */
+        switch status {
+        case .Twitter:
+            images = skPhotos
+        case .Save:
+            images = saveSKPhotos
+        }
 
-    /*
-    // Uncomment this method to specify if the specified item should be selected
-    override func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
-        return true
+        let browser = SKPhotoBrowser(originImage: originImage ?? UIImage(), photos: images, animatedFromView: cell)
+        browser.initializePageIndex(indexPath.item)
+        present(browser, animated: true, completion: nil)
     }
-    */
-
-    /*
-    // Uncomment these methods to specify if an action menu should be displayed for the specified item, and react to actions performed on the item
-    override func collectionView(_ collectionView: UICollectionView, shouldShowMenuForItemAt indexPath: IndexPath) -> Bool {
-        return false
-    }
-
-    override func collectionView(_ collectionView: UICollectionView, canPerformAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) -> Bool {
-        return false
-    }
-
-    override func collectionView(_ collectionView: UICollectionView, performAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) {
-    
-    }
-    */
 
 }
