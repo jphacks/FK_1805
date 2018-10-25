@@ -17,15 +17,22 @@ class AlarmTableViewCell: UITableViewCell {
     @IBOutlet weak var messageLabel: UILabel!
     @IBOutlet weak var alarmSwitch: UISwitch!
 
+    // MARK: - Method
+
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
 
+    func update(target alarm:Alarm) {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "HH:mm"
+        self.timeLabel.text = formatter.string(from: alarm.date)
+        self.messageLabel.text = alarm.pattern?.message
+        let url = URL(string: (alarm.pattern?.imagePath)!)
+        self.photoImage.kf.setImage(with: url)
+    }
 }
