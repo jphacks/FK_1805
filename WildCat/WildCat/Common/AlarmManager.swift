@@ -25,7 +25,7 @@ class AlarmManager {
         }
     }
 
-    class func setAlarm(date: Date, pattern: Pattern) -> Void {
+    class func setAlarm(alarm: Alarm) -> Void {
         // 通知する時間をセット
         var notificationTime = DateComponents()
         notificationTime.hour = 12
@@ -35,9 +35,9 @@ class AlarmManager {
         // 通知する内容をセット
         let content = UNMutableNotificationContent()
         content.title = "Title"
-        content.body = pattern.message
+        content.body = (alarm.pattern?.message)!
         content.sound = UNNotificationSound.default
-        content.attachments = [try! UNNotificationAttachment(identifier: "id", url: URL(fileReferenceLiteralResourceName: pattern.imagePath), options: nil)]
+        content.attachments = [try! UNNotificationAttachment(identifier: "id", url: URL(fileReferenceLiteralResourceName: (alarm.pattern?.imagePath)!), options: nil)]
 
         // 通知リクエストを作成
         let request = UNNotificationRequest(identifier: "id", content: content, trigger: trigger)
