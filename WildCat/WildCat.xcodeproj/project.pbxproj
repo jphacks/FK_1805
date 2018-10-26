@@ -29,6 +29,7 @@
 		E623539721804FBD009E0040 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E623539621804FBD009E0040 /* UIColor+Extension.swift */; };
 		E65CDB9C2182C8F500D8083A /* AddPatternViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E65CDB9B2182C8F500D8083A /* AddPatternViewController.swift */; };
 		E65CDBA02182CA7800D8083A /* TextViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E65CDB9F2182CA7800D8083A /* TextViewViewController.swift */; };
+		E65CDBA22182E49300D8083A /* PhotoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E65CDBA12182E49300D8083A /* PhotoManager.swift */; };
 		FB463D5B217F5ED900C6B1CC /* AlarmTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB463D5A217F5ED900C6B1CC /* AlarmTableViewController.swift */; };
 		FB463D5D217F5EF400C6B1CC /* PhotosCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB463D5C217F5EF400C6B1CC /* PhotosCollectionViewController.swift */; };
 		FB463D5F217F5F0D00C6B1CC /* PatternTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB463D5E217F5F0D00C6B1CC /* PatternTableViewController.swift */; };
@@ -75,6 +76,7 @@
 		E623539621804FBD009E0040 /* UIColor+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		E65CDB9B2182C8F500D8083A /* AddPatternViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPatternViewController.swift; sourceTree = "<group>"; };
 		E65CDB9F2182CA7800D8083A /* TextViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextViewViewController.swift; sourceTree = "<group>"; };
+		E65CDBA12182E49300D8083A /* PhotoManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoManager.swift; sourceTree = "<group>"; };
 		FB463D5A217F5ED900C6B1CC /* AlarmTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmTableViewController.swift; sourceTree = "<group>"; };
 		FB463D5C217F5EF400C6B1CC /* PhotosCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosCollectionViewController.swift; sourceTree = "<group>"; };
 		FB463D5E217F5F0D00C6B1CC /* PatternTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatternTableViewController.swift; sourceTree = "<group>"; };
@@ -159,6 +161,7 @@
 			isa = PBXGroup;
 			children = (
 				E623539621804FBD009E0040 /* UIColor+Extension.swift */,
+				E65CDBA12182E49300D8083A /* PhotoManager.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -317,6 +320,7 @@
 			files = (
 				FB463D5F217F5F0D00C6B1CC /* PatternTableViewController.swift in Sources */,
 				FB463D5B217F5ED900C6B1CC /* AlarmTableViewController.swift in Sources */,
+				E65CDBA22182E49300D8083A /* PhotoManager.swift in Sources */,
 				7569B05A217B04AB0069EADB /* AppDelegate.swift in Sources */,
 				E65CDBA02182CA7800D8083A /* TextViewViewController.swift in Sources */,
 				E623539721804FBD009E0040 /* UIColor+Extension.swift in Sources */,
