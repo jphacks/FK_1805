@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Photos
 
 class AddPatternViewController: TextViewViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 

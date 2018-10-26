@@ -24,10 +24,12 @@ class PatternTableViewCell: UITableViewCell {
 
     func update(target model: Pattern) {
         self.messageLabel.text = model.message
-        PhotoManager.getImageWithURL(stringURL: model.imagePath) { (image) in
-            if let image = image {
-                self.phtoImage.image = image
-            }
-        }
+        print(model.imagePath)
+        self.phtoImage.contentMode = .scaleAspectFit
+//        PhotoManager.getImageWithURL(stringURL: model.imagePath) { (image) in
+//            if let image = image {
+//                self.phtoImage.image = image
+//            }
+//        }
     }
 }
