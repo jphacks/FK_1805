@@ -15,6 +15,7 @@ class PatternTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setup()
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector())
     }
 
     /// set Datas
@@ -39,6 +40,11 @@ class PatternTableViewController: UITableViewController {
         let targetPattern = self.patterns[indexPath.item]
         cell.update(target: targetPattern)
         return cell
+    }
+
+    func segueToAdd() {
+        let next = UIStoryboard(name: "PatternTableViewController", bundle: nil).instantiateViewController(withIdentifier: "add")
+        self.present.(next, animated: true, completion: nil)
     }
 
     /*
