@@ -16,6 +16,16 @@ class PatternTableViewController: UITableViewController {
         super.viewDidLoad()
         self.setup()
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(self.segueToAdd))
+        refreshControl = UIRefreshControl()
+        refreshControl?.addTarget(self, action: #selector(self.refreshData(sender:)), for: .valueChanged)
+    }
+
+    @objc func refreshData(sender: UIRefreshControl) {
+        refreshControl?.beginRefreshing()
+        let data = Array(Pattern.read())
+        self.patterns = data
+        self.tableView.reloadData()
+        refreshControl?.endRefreshing()
     }
 
     /// set Datas
@@ -40,6 +50,10 @@ class PatternTableViewController: UITableViewController {
         let targetPattern = self.patterns[indexPath.item]
         cell.update(target: targetPattern)
         return cell
+    }
+
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return CGFloat(105)
     }
 
     @objc func segueToAdd() {
