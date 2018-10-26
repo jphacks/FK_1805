@@ -15,7 +15,7 @@ class PatternTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setup()
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector())
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(self.segueToAdd))
     }
 
     /// set Datas
@@ -42,9 +42,9 @@ class PatternTableViewController: UITableViewController {
         return cell
     }
 
-    func segueToAdd() {
+    @objc func segueToAdd() {
         let next = UIStoryboard(name: "PatternTableViewController", bundle: nil).instantiateViewController(withIdentifier: "add")
-        self.present.(next, animated: true, completion: nil)
+        self.present(next, animated: true, completion: nil)
     }
 
     /*
