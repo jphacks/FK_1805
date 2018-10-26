@@ -35,6 +35,7 @@
 		FB463D63217F5F5200C6B1CC /* PhotosCollectionViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB463D62217F5F5200C6B1CC /* PhotosCollectionViewController.storyboard */; };
 		FB463D65217F5F5F00C6B1CC /* PatternTableViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB463D64217F5F5F00C6B1CC /* PatternTableViewController.storyboard */; };
 		FBA80E8F218191EB006E6183 /* AlarmTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA80E8E218191EB006E6183 /* AlarmTableViewCell.swift */; };
+		FBA80E912181FAAE006E6183 /* AlarmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA80E902181FAAE006E6183 /* AlarmManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -81,6 +82,7 @@
 		FB463D62217F5F5200C6B1CC /* PhotosCollectionViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PhotosCollectionViewController.storyboard; sourceTree = "<group>"; };
 		FB463D64217F5F5F00C6B1CC /* PatternTableViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PatternTableViewController.storyboard; sourceTree = "<group>"; };
 		FBA80E8E218191EB006E6183 /* AlarmTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmTableViewCell.swift; sourceTree = "<group>"; };
+		FBA80E902181FAAE006E6183 /* AlarmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,6 +161,7 @@
 			children = (
 				E623539621804FBD009E0040 /* UIColor+Extension.swift */,
 				75458DC521817F210031A97F /* LocalPhoto.swift */,
+				FBA80E902181FAAE006E6183 /* AlarmManager.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -314,6 +317,7 @@
 				75458DC621817F210031A97F /* LocalPhoto.swift in Sources */,
 				FB463D5D217F5EF400C6B1CC /* PhotosCollectionViewController.swift in Sources */,
 				75D2419D217F6EAA007E81BD /* Helper Files.swift in Sources */,
+				FBA80E912181FAAE006E6183 /* AlarmManager.swift in Sources */,
 				75B18821218053440081D7DE /* PhotoCell.swift in Sources */,
 				75B18825218054550081D7DE /* Photo.swift in Sources */,
 				75D24197217F66D0007E81BD /* Pattern.swift in Sources */,

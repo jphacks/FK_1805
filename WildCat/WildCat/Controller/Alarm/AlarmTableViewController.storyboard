@@ -94,7 +94,25 @@
                     <view key="view" contentMode="scaleToFill" id="JTI-iG-TiG">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="gcY-lI-zrc">
+                                <rect key="frame" x="0.0" y="64" width="375" height="216"/>
+                                <date key="date" timeIntervalSinceReferenceDate="562164391.78168595">
+                                    <!--2018-10-25 12:46:31 +0000-->
+                                </date>
+                            </datePicker>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WF4-jG-jsE">
+                                <rect key="frame" x="170" y="516" width="34" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Save"/>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="gcY-lI-zrc" firstAttribute="top" secondItem="JeB-B2-3Ol" secondAttribute="top" id="HIH-CH-7p7"/>
+                            <constraint firstItem="gcY-lI-zrc" firstAttribute="leading" secondItem="JeB-B2-3Ol" secondAttribute="leading" id="i5M-dW-TwO"/>
+                            <constraint firstItem="gcY-lI-zrc" firstAttribute="trailing" secondItem="JeB-B2-3Ol" secondAttribute="trailing" id="qvi-zU-5Wz"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="JeB-B2-3Ol"/>
                     </view>
                 </viewController>
