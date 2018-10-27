@@ -11,7 +11,7 @@ import Photos
 
 class PatternTableViewCell: UITableViewCell {
 
-    @IBOutlet weak private var phtoImage: UIImageView!
+    @IBOutlet weak private var photoImage: UIImageView!
     @IBOutlet weak private var messageLabel: UILabel!
 
     override func awakeFromNib() {
@@ -24,6 +24,6 @@ class PatternTableViewCell: UITableViewCell {
 
     func update(message: String, photo: UIImage) {
         self.messageLabel.text = message
-        self.phtoImage.image = photo
+        self.photoImage.image = photo
     }
 }

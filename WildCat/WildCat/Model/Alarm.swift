@@ -16,6 +16,11 @@ class Alarm: Object {
 }
 
 extension Alarm {
+    class func read() -> Results<Alarm> {
+        let realm = try! Realm()
+        return realm.objects(Alarm.self)
+    }
+
     class func add(alarm: Alarm) {
         do {
             let realm = try Realm()
