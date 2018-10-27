@@ -12,6 +12,6 @@ struct Photo: Decodable {
     var imagePath: String
 
     enum CodingKeys: String, CodingKey {
-        case imagePath = "image_url"
+        case imagePath = "url"
     }
 }
