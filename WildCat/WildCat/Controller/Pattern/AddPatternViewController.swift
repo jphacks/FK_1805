@@ -12,7 +12,7 @@ import Photos
 class AddPatternViewController: TextViewViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     @IBOutlet weak private var photoImageView: UIImageView!
-    @IBOutlet weak private var messageTextView: UITextView!
+    @IBOutlet weak private var messageTextView: CustomTextView!
     private let imagePicker = UIImagePickerController()
     private var localIdentifier: String?
 
@@ -37,6 +37,10 @@ class AddPatternViewController: TextViewViewController, UIImagePickerControllerD
         new.imagePath = localIdentifier
         Pattern.add(pattern: new)
         dismiss(animated: true, completion: nil)
+    }
+
+    @IBAction func dismissAction(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
     }
 }
 
