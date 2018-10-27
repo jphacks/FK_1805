@@ -86,5 +86,6 @@ class LocalPhoto {
                 }
             }
         }
+        photos.first(where: { $0.localIdentifier == "" })
     }
 }

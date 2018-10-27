@@ -8,10 +8,12 @@
 
 import UIKit
 import SKPhotoBrowser
+import Photos
 
-class PhotosCollectionViewController: UICollectionViewController, SKPhotoBrowserDelegate {
+class PhotosCollectionViewController: UICollectionViewController, SKPhotoBrowserDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
 
     private let refreshControl = UIRefreshControl()
+    private let imagePickerView = UIImagePickerController()
 
     // Twitter
     private var photos = [Photo]()
@@ -27,6 +29,7 @@ class PhotosCollectionViewController: UICollectionViewController, SKPhotoBrowser
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.imagePickerView.delegate = self
         self.collectionView.refreshControl = refreshControl
         self.refreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged)
 
@@ -66,17 +69,23 @@ class PhotosCollectionViewController: UICollectionViewController, SKPhotoBrowser
     }
 
     private func getData() {
-        guard let path = Bundle.main.path(forResource: "Photo", ofType: "json") else { return }
-        let url = URL(fileURLWithPath: path)
-        do {
-            let data = try Data(contentsOf: url)
-            let photos = try
-                JSONDecoder().decode([Photo].self, from: data)
-            self.photos = photos
-            self.collectionView.reloadData()
-        } catch  {
-            print(error)
+
+        let status = PHPhotoLibrary.authorizationStatus()
+        if (status == .authorized || status == .notDetermined) {
+            self.imagePickerView.sourceType = .savedPhotosAlbum;
+            self.present(self.imagePickerView, animated: true, completion: nil)
         }
+//        guard let path = Bundle.main.path(forResource: "Photo", ofType: "json") else { return }
+//        let url = URL(fileURLWithPath: path)
+//        do {
+//            let data = try Data(contentsOf: url)
+//            let photos = try
+//                JSONDecoder().decode([Photo].self, from: data)
+//            self.photos = photos
+//            self.collectionView.reloadData()
+//        } catch  {
+//            print(error)
+//        }
     }
 
     /*
@@ -162,4 +171,10 @@ class PhotosCollectionViewController: UICollectionViewController, SKPhotoBrowser
         }
     }
 
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+
+        if let asset = info[UIImagePickerController.InfoKey.phAsset] as? PHAsset {
+            print("location: \(asset.localIdentifier)")
+        }
+    }
 }
