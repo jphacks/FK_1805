@@ -109,6 +109,14 @@
                                     <action selector="saveButtonTapped:" destination="KXk-aU-gjL" eventType="touchUpInside" id="wLh-BN-PqN"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dcO-uf-GQ1">
+                                <rect key="frame" x="49" y="393" width="160" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="パターンを選択"/>
+                                <connections>
+                                    <action selector="selectPatternAction:" destination="KXk-aU-gjL" eventType="touchUpInside" id="DkQ-pw-BVV"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -125,7 +133,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DNx-5V-v15" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1786" y="247"/>
+            <point key="canvasLocation" x="1784.8" y="246.9265367316342"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Q3k-st-2wU">
@@ -142,6 +150,34 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4No-Ai-Inl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-138" y="247"/>
+        </scene>
+        <!--Select Pattern Table View Controller-->
+        <scene sceneID="dXO-8L-Qtt">
+            <objects>
+                <tableViewController storyboardIdentifier="selectPatternViewController" id="OC4-4c-Gk8" customClass="SelectPatternTableViewController" customModule="WildCat" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="vsx-ex-PGi">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="ny6-CV-vfw" customClass="PatternTableViewCell" customModule="WildCat" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ny6-CV-vfw" id="N2d-0h-jDJ">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="OC4-4c-Gk8" id="kF3-q2-gAW"/>
+                            <outlet property="delegate" destination="OC4-4c-Gk8" id="wRT-dC-Eq4"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GLI-ae-7Ze" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2799" y="247"/>
         </scene>
     </scenes>
 </document>
