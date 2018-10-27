@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import Kingfisher
+import Photos
 
 class PatternTableViewCell: UITableViewCell {
 
@@ -22,9 +22,8 @@ class PatternTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
     }
 
-    func update(target model: Pattern) {
-        self.messageLabel.text = model.message
-        let url = URL(string: model.imagePath)!
-        self.imageView!.kf.setImage(with: url)
+    func update(message: String, photo: UIImage) {
+        self.messageLabel.text = message
+        self.phtoImage.image = photo
     }
 }
