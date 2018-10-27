@@ -19,6 +19,7 @@
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" name="BackgroundColor"/>
+                        <color key="tintColor" name="ItemColor"/>
                         <color key="barTintColor" name="BackgroundColor"/>
                     </navigationBar>
                     <connections>
@@ -37,6 +38,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" name="BackgroundColor"/>
+                        <color key="tintColor" name="ItemColor"/>
                         <color key="separatorColor" name="BackgroundColor"/>
                         <color key="sectionIndexBackgroundColor" name="BackgroundColor"/>
                         <connections>
@@ -69,6 +71,7 @@
                                 <items>
                                     <navigationItem title="新規作成" id="Efc-FM-Jd0">
                                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="Vsp-NK-daQ">
+                                            <color key="tintColor" name="ItemColor"/>
                                             <connections>
                                                 <action selector="dismissAction:" destination="bib-on-4CL" id="FYn-x1-Qe6"/>
                                             </connections>
