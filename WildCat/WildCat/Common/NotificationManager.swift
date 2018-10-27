@@ -9,7 +9,7 @@
 import Foundation
 import UserNotifications
 
-protocol NotificationManagerInterface {
+protocol NotificationManagerInterface: class {
     func addNotification(Alarm: Alarm)
     func deleteNotification(Alarm: Alarm)
 }
@@ -18,7 +18,7 @@ class NotificationManager: NotificationManagerInterface {
 
 
     func addNotification(Alarm: Alarm) {
-        let center = UNUserNotificationCenter
+//        let center = UNUserNotificationCenter
     }
 
     func deleteNotification(Alarm: Alarm) {
