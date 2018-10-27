@@ -21,14 +21,19 @@ class NotificationManager:NSObject, NotificationManagerInterface, UNUserNotifica
 
     func addNotification(alarm: Alarm) {
         if let pattern = alarm.pattern {
-            let content = UNMutableNotificationContent()
-            content.title = "やまこーちゃんちゃんちゃん"
-            content.body = pattern.message
             let id = String(pattern.id)
+            let remotePath = RemotePath.filter(localPath: pattern.imagePath)
+            let content = UNMutableNotificationContent()
+            content.title = "まいちゃん"
+            content.body = pattern.message
+            if let remote = remotePath.first {
+                let url = URL(string: remote.remotePath)!
+                if let attempt = try? UNNotificationAttachment(identifier: id, url: url, options: nil) {
+                    content.attachments = [attempt]
+                }
+            }
             /// set time
-            var dateComponents = Calendar.current.dateComponents([.hour, .minute], from: alarm.date)
-            dateComponents.hour = 15
-            dateComponents.minute = 57
+            let dateComponents = Calendar.current.dateComponents([.hour, .minute], from: alarm.date)
             let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: false)
             // set notification
             let request = UNNotificationRequest(identifier: id, content: content, trigger: trigger)
