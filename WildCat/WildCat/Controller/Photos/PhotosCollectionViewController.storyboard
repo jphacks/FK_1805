@@ -6,7 +6,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.16.1"/>
-        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -26,7 +25,7 @@
             </objects>
             <point key="canvasLocation" x="-622" y="125"/>
         </scene>
-        <!--Photos Collection View Controller-->
+        <!--Photo-->
         <scene sceneID="YE4-O0-6VA">
             <objects>
                 <collectionViewController id="wjh-Kb-DeI" customClass="PhotosCollectionViewController" customModule="WildCat" customModuleProvider="target" sceneMemberID="viewController">
@@ -69,8 +68,8 @@
                             <outlet property="delegate" destination="wjh-Kb-DeI" id="aMv-6m-1ii"/>
                         </connections>
                     </collectionView>
-                    <tabBarItem key="tabBarItem" systemItem="mostRecent" id="rHf-gh-1i3">
-                        <color key="badgeColor" name="TitleColor"/>
+                    <tabBarItem key="tabBarItem" title="Photo" image="photo" id="rHf-gh-1i3">
+                        <color key="badgeColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBarItem>
                     <navigationItem key="navigationItem" id="VD3-25-4TP">
                         <nil key="title"/>
@@ -96,8 +95,6 @@
         </scene>
     </scenes>
     <resources>
-        <namedColor name="TitleColor">
-            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
+        <image name="photo" width="36" height="21"/>
     </resources>
 </document>

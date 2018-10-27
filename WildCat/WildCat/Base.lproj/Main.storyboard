@@ -14,10 +14,10 @@
         <scene sceneID="XNB-pz-rkn">
             <objects>
                 <tabBarController id="a8o-Bj-pXP" sceneMemberID="viewController">
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="BNP-KS-6sZ">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" id="BNP-KS-6sZ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" name="ItemColor"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="tintColor" name="ItemColor"/>
                         <color key="barTintColor" name="BackgroundColor"/>
                     </tabBar>
@@ -35,7 +35,7 @@
         <scene sceneID="X1f-yM-QDK">
             <objects>
                 <viewControllerPlaceholder storyboardName="AlarmTableViewController" id="TB2-zq-b0B" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="7YJ-0T-2aT"/>
+                    <tabBarItem key="tabBarItem" title="Alarm" image="clock" id="7YJ-0T-2aT"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uMq-lh-PbU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -45,7 +45,9 @@
         <scene sceneID="Czz-NQ-irJ">
             <objects>
                 <viewControllerPlaceholder storyboardName="PhotosCollectionViewController" id="S2q-Y1-yZ2" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="SV7-JA-DMG"/>
+                    <tabBarItem key="tabBarItem" title="Alarm" image="clock" id="SV7-JA-DMG">
+                        <color key="badgeColor" name="ItemColor"/>
+                    </tabBarItem>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RUn-9M-EhE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -63,6 +65,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="clock" width="24" height="24"/>
         <namedColor name="BackgroundColor">
             <color red="0.17647058823529413" green="0.17647058823529413" blue="0.17647058823529413" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
