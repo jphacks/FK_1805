@@ -50,6 +50,7 @@ class PhotoPickerController: UIViewController, UICollectionViewDelegate, UIColle
         if let delegate = self.delegate {
             delegate.didSelectPhoto(asset: result)
         }
+        self.dismiss(animated: true, completion: nil)
     }
 
     @IBAction func dismissAction(_ sender: Any) {
@@ -65,6 +66,7 @@ extension PhotoPickerController {
         let collection = PHAssetCollection.fetchAssetCollections(with: .album, subtype: .albumRegular, options: fetchOptions)
         collection.enumerateObjects { (collection, index, stop) in
             self.fetchResult = PHAsset.fetchAssets(in: collection, options: nil)
+            print(String(self.fetchResult.count))
         }
         self.collectionView.reloadData()
     }

@@ -24,7 +24,11 @@ class AddPatternViewController: TextViewViewController, UIImagePickerControllerD
     }
 
     func didSelectPhoto(asset: PHAsset) {
-        self.localIdentifier = asset.localIdentifier
+        let identifier = asset.localIdentifier
+        self.localIdentifier = identifier
+        LocalPhoto.load(localIdentifer: identifier) { (image) in
+            self.photoImageView.image = image
+        }
     }
     
     @IBAction func selectImageAction(_ sender: Any) {
