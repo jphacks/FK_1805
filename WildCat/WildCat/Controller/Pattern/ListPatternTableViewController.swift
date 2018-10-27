@@ -11,6 +11,12 @@ import Photos
 
 class ListPatternTableViewController: PatternTableViewController {
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+
+        self.refreshData(sender: self.refreshControl!)
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setup()
