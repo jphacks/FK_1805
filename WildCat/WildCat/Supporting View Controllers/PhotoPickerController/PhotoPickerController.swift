@@ -21,19 +21,6 @@ class PhotoPickerController: UIViewController, UICollectionViewDelegate, UIColle
     private let imageManager = PHCachingImageManager()
     @IBOutlet weak var collectionView: UICollectionView!
 
-    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
-        super.init(nibName: "PhotoPickerController", bundle: nil)
-    }
-    
-    init() {
-        super.init(nibName: "PhotoPickerController", bundle: nil)
-    }
-
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-
-    }
-
     override func viewDidLoad() {
         super.viewDidLoad()
         self.collectionView.delegate = self
@@ -79,5 +66,6 @@ extension PhotoPickerController {
         collection.enumerateObjects { (collection, index, stop) in
             self.fetchResult = PHAsset.fetchAssets(in: collection, options: nil)
         }
+        self.collectionView.reloadData()
     }
 }
