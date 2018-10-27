@@ -35,7 +35,7 @@ class AlarmTableViewCell: UITableViewCell {
         self.messageLabel.text = alarm.pattern?.message
         LocalPhoto.load(localIdentifer: (alarm.pattern?.imagePath)!) { (resultImage) in
             if let resultImage = resultImage {
-                self.photoImage.image = resultImage
+                self.photoImage.image = resultImage.cropping2square()
             }
         }
         if self.alarmSwitch.isOn {
@@ -48,9 +48,13 @@ class AlarmTableViewCell: UITableViewCell {
         if let alarm = self.alarm {
             if sender.isOn {
                 notificationManager.addNotification(alarm: alarm)
+                self.timeLabel.textColor = UIColor.title
+                self.messageLabel.textColor = UIColor.title
             } else {
                 notificationManager.deletePendingNotification(alarm: alarm)
                 notificationManager.deleteDeliveredNotification(alarm: alarm)
+                self.timeLabel.textColor = UIColor.label
+                self.messageLabel.textColor = UIColor.label
             }
         }
     }

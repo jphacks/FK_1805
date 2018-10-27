@@ -28,11 +28,12 @@
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="メッセージ" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0xc-kU-r7c">
                         <rect key="frame" x="160" y="11" width="199" height="128"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <nil key="textColor"/>
+                        <color key="textColor" name="TitleColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
-                <color key="backgroundColor" name="LabelColor"/>
+                <color key="backgroundColor" name="BackgroundColor"/>
+                <color key="tintColor" name="ItemColor"/>
                 <constraints>
                     <constraint firstAttribute="bottomMargin" secondItem="0hs-5e-89i" secondAttribute="bottom" id="6uG-8I-a0J"/>
                     <constraint firstItem="0xc-kU-r7c" firstAttribute="top" secondItem="HgQ-Yn-J0a" secondAttribute="topMargin" id="Adw-PH-Oyq"/>
@@ -43,7 +44,7 @@
                     <constraint firstAttribute="bottomMargin" secondItem="0xc-kU-r7c" secondAttribute="bottom" id="vjg-xM-0Li"/>
                 </constraints>
             </tableViewCellContentView>
-            <color key="backgroundColor" name="LabelColor"/>
+            <color key="backgroundColor" name="BackgroundColor"/>
             <connections>
                 <outlet property="messageLabel" destination="0xc-kU-r7c" id="Qsk-Be-b6c"/>
                 <outlet property="photoImage" destination="0hs-5e-89i" id="U2O-gL-HKP"/>
@@ -52,8 +53,14 @@
         </tableViewCell>
     </objects>
     <resources>
-        <namedColor name="LabelColor">
-            <color red="0.59215686274509804" green="0.59215686274509804" blue="0.59215686274509804" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <namedColor name="BackgroundColor">
+            <color red="0.17647058823529413" green="0.17647058823529413" blue="0.17647058823529413" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="ItemColor">
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="TitleColor">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>
