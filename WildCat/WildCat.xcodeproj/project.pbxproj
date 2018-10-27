@@ -223,8 +223,8 @@
 		FB463D59217F5E4E00C6B1CC /* Alarm */ = {
 			isa = PBXGroup;
 			children = (
-				FBEE7D302183ED9B007C4CAB /* SetAlarmViewController.swift */,
 				FB463D5A217F5ED900C6B1CC /* AlarmTableViewController.swift */,
+				FBEE7D302183ED9B007C4CAB /* SetAlarmViewController.swift */,
 				FB463D60217F5F3100C6B1CC /* AlarmTableViewController.storyboard */,
 			);
 			path = Alarm;

@@ -26,7 +26,12 @@ class SetAlarmViewController: UIViewController {
     // MARK: - Actions of Buttons
 
     @IBAction func saveButtonTapped(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
-        return
+        let alarm = Alarm()
+        alarm.date = timePicker.date
+
+        // test
+        alarm.pattern = Pattern.read()[0]
+
+        Alarm.add(alarm: alarm)
     }
 }

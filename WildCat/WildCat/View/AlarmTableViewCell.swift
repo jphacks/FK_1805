@@ -32,7 +32,10 @@ class AlarmTableViewCell: UITableViewCell {
         formatter.dateFormat = "HH:mm"
         self.timeLabel.text = formatter.string(from: alarm.date)
         self.messageLabel.text = alarm.pattern?.message
-        let url = URL(string: (alarm.pattern?.imagePath)!)
-        self.photoImage.kf.setImage(with: url)
+        LocalPhoto.load(localIdentifer: (alarm.pattern?.imagePath)!) { (resultImage) in
+            if let resultImage = resultImage {
+                self.photoImage.image = resultImage
+            }
+        }
     }
 }

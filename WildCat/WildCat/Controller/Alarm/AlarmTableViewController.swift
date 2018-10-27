@@ -16,6 +16,22 @@ class AlarmTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.setup()
+        refreshControl = UIRefreshControl()
+        refreshControl?.addTarget(self, action: #selector(self.refreshData(sender:)), for: .valueChanged)
+    }
+
+    private func setup() {
+        let data = Array(Alarm.read())
+        self.alarms = data
+        self.tableView.reloadData()
+    }
+
+    @objc func refreshData(sender: UIRefreshControl) {
+        let data = Array(Alarm.read())
+        self.alarms = data
+        self.tableView.reloadData()
+        refreshControl?.endRefreshing()
     }
 
     // MARK: - Table view data source
