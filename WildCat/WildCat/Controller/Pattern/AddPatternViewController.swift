@@ -38,6 +38,10 @@ class AddPatternViewController: TextViewViewController, UIImagePickerControllerD
         Pattern.add(pattern: new)
         dismiss(animated: true, completion: nil)
     }
+
+    @IBAction func dismissAction(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
 }
 
 extension AddPatternViewController {

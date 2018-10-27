@@ -94,7 +94,13 @@
                             <navigationBar contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4rs-9F-HmW">
                                 <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                                 <items>
-                                    <navigationItem title="パターンの新規作成" id="pky-DI-iwz"/>
+                                    <navigationItem title="新規作成" id="Efc-FM-Jd0">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="Vsp-NK-daQ">
+                                            <connections>
+                                                <action selector="dismissAction:" destination="bib-on-4CL" id="FYn-x1-Qe6"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
                                 </items>
                             </navigationBar>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8HI-iX-jca">
