@@ -89,3 +89,15 @@ class LocalPhoto {
         photos.first(where: { $0.localIdentifier == "" })
     }
 }
+
+extension LocalPhoto {
+
+    class func load(localIdentifer: String, complition: @escaping (UIImage?) -> Void) {
+        let imageManager = PHCachingImageManager()
+        guard let asset = PHAsset.fetchAssets(withLocalIdentifiers: [localIdentifer], options: nil).firstObject else { return }
+        let size = CGSize(width: asset.pixelWidth, height: asset.pixelHeight)
+        imageManager.requestImage(for: asset, targetSize: size, contentMode: .aspectFill, options: nil) { (image, _) in
+            complition(image)
+        }
+    }
+}
