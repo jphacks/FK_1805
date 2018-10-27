@@ -38,4 +38,14 @@ class ListPatternTableViewController: PatternTableViewController {
         let next = UIStoryboard(name: "PatternTableViewController", bundle: nil).instantiateViewController(withIdentifier: "add")
         self.present(next, animated: true, completion: nil)
     }
+
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            let targetPattern = self.patterns[indexPath.item]
+            Pattern.delete(pattern: targetPattern)
+            self.patterns.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+            return
+        }
+    }
 }
