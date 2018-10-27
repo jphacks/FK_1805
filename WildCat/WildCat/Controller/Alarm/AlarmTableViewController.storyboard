@@ -130,7 +130,8 @@
                             </button>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="gcY-lI-zrc">
                                 <rect key="frame" x="0.0" y="30" width="375" height="216"/>
-                                <color key="backgroundColor" name="TitleColor"/>
+                                <color key="backgroundColor" name="BackgroundColor"/>
+                                <color key="tintColor" name="ItemColor"/>
                                 <date key="date" timeIntervalSinceReferenceDate="562164391.78168595">
                                     <!--2018-10-25 12:46:31 +0000-->
                                 </date>
