@@ -8,9 +8,14 @@
 
 import UIKit
 
+protocol PatternTableViewControllerDelegate {
+    func didFinishChoosePattern(pattern: Pattern)
+}
+
 public class PatternTableViewController: UITableViewController {
 
     var patterns:[Pattern] = []
+    var delegate: PatternTableViewControllerDelegate?
 
     // MARK: - Table view data source
 
@@ -37,6 +42,13 @@ public class PatternTableViewController: UITableViewController {
 
     override public func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return CGFloat(105)
+    }
+
+    override public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let delegate = self.delegate {
+            let target = self.patterns[indexPath.row]
+            delegate.didFinishChoosePattern(pattern: target)
+        }
     }
 }
 
