@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.9"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -41,6 +42,7 @@
                     <constraint firstAttribute="bottomMargin" secondItem="0xc-kU-r7c" secondAttribute="bottom" id="vjg-xM-0Li"/>
                 </constraints>
             </tableViewCellContentView>
+            <color key="backgroundColor" name="LabelColor"/>
             <connections>
                 <outlet property="messageLabel" destination="0xc-kU-r7c" id="Qsk-Be-b6c"/>
                 <outlet property="photoImage" destination="0hs-5e-89i" id="U2O-gL-HKP"/>
@@ -48,4 +50,9 @@
             <point key="canvasLocation" x="162.40000000000001" y="132.23388305847078"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <namedColor name="LabelColor">
+            <color red="0.59215686274509804" green="0.59215686274509804" blue="0.59215686274509804" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
 </document>
