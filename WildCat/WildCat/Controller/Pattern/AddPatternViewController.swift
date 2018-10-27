@@ -32,9 +32,6 @@ class AddPatternViewController: TextViewViewController, UIImagePickerControllerD
     }
     
     @IBAction func selectImageAction(_ sender: Any) {
-//        self.imagePicker.allowsEditing = false
-//        self.imagePicker.sourceType = .photoLibrary
-//        self.present(imagePicker, animated: true, completion: nil)
         let next = PhotoPickerController()
         next.delegate = self
         self.present(next, animated: true, completion: nil)

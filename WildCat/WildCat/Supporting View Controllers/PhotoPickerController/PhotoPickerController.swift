@@ -38,7 +38,7 @@ class PhotoPickerController: UIViewController, UICollectionViewDelegate, UIColle
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "photoCell", for: indexPath) as! PhotoPickerCell
         let asset = self.fetchResult.object(at: indexPath.row)
         let size = CGSize(width: asset.pixelWidth, height: asset.pixelHeight)
-        imageManager.requestImage(for: asset, targetSize: size, contentMode: .aspectFill, options: nil) { (image, _) in
+        imageManager.requestImage(for: asset, targetSize: size, contentMode: .aspectFit, options: nil) { (image, _) in
             let image = image ?? UIImage(named: "black")!
             cell.update(image: image)
         }
@@ -55,6 +55,15 @@ class PhotoPickerController: UIViewController, UICollectionViewDelegate, UIColle
 
     @IBAction func dismissAction(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
+    }
+}
+
+extension PhotoPickerController: UICollectionViewDelegateFlowLayout {
+
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let width: CGFloat = UIScreen.main.bounds.width / 4
+        let height = width
+        return CGSize(width: width, height: height)
     }
 }
 
