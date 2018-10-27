@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.15" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="e6J-OD-C2d">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.23.1" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="e6J-OD-C2d">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.9"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.16.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -75,6 +75,7 @@
                             <outlet property="delegate" destination="mnW-Hy-IPb" id="Vfj-R6-SIV"/>
                         </connections>
                     </tableView>
+                    <tabBarItem key="tabBarItem" title="Alarm" image="clock" id="0Kl-hx-GaM"/>
                     <navigationItem key="navigationItem" title="Alarm" id="8S3-86-WQl">
                         <barButtonItem key="rightBarButtonItem" style="plain" systemItem="add" id="Lqf-Sj-yeJ">
                             <connections>
@@ -82,6 +83,7 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OLl-dn-qXc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -126,6 +128,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="JeB-B2-3Ol"/>
                     </view>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="saveButton" destination="WF4-jG-jsE" id="zjZ-iK-RJJ"/>
                         <outlet property="timePicker" destination="gcY-lI-zrc" id="Rr9-Cd-Z3w"/>
@@ -180,4 +183,7 @@
             <point key="canvasLocation" x="2799" y="247"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="clock" width="24" height="24"/>
+    </resources>
 </document>
