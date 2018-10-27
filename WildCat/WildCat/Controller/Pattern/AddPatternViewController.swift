@@ -47,8 +47,8 @@ extension AddPatternViewController {
             self.photoImageView.contentMode = .scaleAspectFit
             self.photoImageView.image = pickedImage
         }
-        if let photoURL = info[UIImagePickerController.InfoKey.imageURL] as? URL {
-            self.imageURL = photoURL.absoluteString
+        if let asset = info[UIImagePickerController.InfoKey.phAsset] as? PHAsset {
+            print(asset.localIdentifier)
         }
         dismiss(animated: true, completion: nil)
     }

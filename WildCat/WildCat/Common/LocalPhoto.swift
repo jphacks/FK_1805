@@ -91,27 +91,12 @@ class LocalPhoto {
 
 extension LocalPhoto {
 
-    class func load(path: String, complition: @escaping (UIImage) -> Void) {
-        let dumyPath = "file:///Users/koyamaura/Library/Developer/CoreSimulator/Devices/D60D2A3B-5DE5-48E5-9ED3-A1D6064F45DB/data/Containers/Data/Application/5F670617-EA8B-4715-9B25-5F3F5D707F11/tmp/F5D7E81D-C777-433C-9851-021377ABE53E.jpeg"
-        self.findOrCreateAlbum(name: "WildCat") { (album) in
-            if let album = album {
-                let asset = PHAsset.fetchAssets(in: album, options: nil)
-                var photo = PHAsset()
-                if let firstObject = asset.firstObject {
-                    photo = firstObject
-                    print("first object がありまーす")
-                }
-//                asset.enumerateObjects { (image, _, _) in
-//                    photo = image
-//                }
-
-                let manager = PHImageManager()
-                var image: UIImage? = UIImage(named: "black")
-                manager.requestImage(for: photo, targetSize: CGSize(width: photo.pixelWidth, height: photo.pixelHeight), contentMode: .aspectFit, options: nil) { (imagee, info) in
-                    image = imagee!
-                }
-                complition(image)
-            }
+    class func load(localIdentifer: String, complition: @escaping (UIImage?) -> Void) {
+        let imageManager = PHCachingImageManager()
+        guard let asset = PHAsset.fetchAssets(withLocalIdentifiers: [localIdentifer], options: nil).firstObject else { return }
+        let size = CGSize(width: asset.pixelWidth, height: asset.pixelHeight)
+        imageManager.requestImage(for: asset, targetSize: size, contentMode: .aspectFill, options: nil) { (image, _) in
+            complition(image)
         }
     }
 }

@@ -7,6 +7,12 @@
 //
 
 import UIKit
+import Photos
+
+struct PatternViewModel {
+    var message: String
+    var image: UIImage
+}
 
 class PatternTableViewController: UITableViewController {
 
@@ -48,7 +54,13 @@ class PatternTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "patternCell", for: indexPath) as! PatternTableViewCell
         let targetPattern = self.patterns[indexPath.item]
-        cell.update(target: targetPattern)
+        var image = UIImage(named: "black")!
+        LocalPhoto.load(localIdentifer: targetPattern.imagePath) { (resultImage) in
+            if let resultImage = resultImage {
+                image = resultImage
+            }
+        }
+        cell.update(message: targetPattern.message, photo: image)
         return cell
     }
 
