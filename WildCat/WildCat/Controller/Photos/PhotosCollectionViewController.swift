@@ -13,7 +13,7 @@ import Photos
 class PhotosCollectionViewController: UICollectionViewController, SKPhotoBrowserDelegate {
 
     private let refreshControl = UIRefreshControl()
-    private var page: Int = 1
+    private var page: Int = 0
 
     // Twitter
     private var images = [UIImage]()
@@ -54,6 +54,7 @@ class PhotosCollectionViewController: UICollectionViewController, SKPhotoBrowser
     }
 
     @objc private func refresh() {
+        self.page += 1
         getData()
     }
 
@@ -84,7 +85,7 @@ class PhotosCollectionViewController: UICollectionViewController, SKPhotoBrowser
 //        }
 
         // RemoteURL
-        let url = URL(string: "http://13.115.170.124:3000/api/images/?size=30&offset=0")!
+        let url = URL(string: "http://13.115.170.124:3000/api/images/?size=30&offset=\(page)")!
         URLSession.shared.dataTask(with: url) { (data, _, error) in
             if let data = data {
                 do {
@@ -152,7 +153,7 @@ class PhotosCollectionViewController: UICollectionViewController, SKPhotoBrowser
         switch status {
         case .Twitter:
             images = skPhotos
-            let browser = SKPhotoBrowser(originImage: self.images[indexPath.item] ?? UIImage(), photos: images, animatedFromView: cell)
+            let browser = SKPhotoBrowser(originImage: self.images[indexPath.item], photos: images, animatedFromView: cell)
             browser.delegate = self
             let addImage = UIImageView(image: UIImage(named: "Add"))
             addImage.isUserInteractionEnabled = true

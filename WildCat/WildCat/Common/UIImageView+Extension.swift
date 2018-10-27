@@ -13,7 +13,7 @@ extension UIImageView {
 
     func cacheImage(with url: URL, completion: @escaping (UIImage?) -> Void) {
         if let imageFromCache = UIImageView.imageCache.object(forKey: url.absoluteString as AnyObject) as? UIImage {
-            self.image = imageFromCache
+            self.image = imageFromCache.cropping2square()
             completion(imageFromCache)
             return
         }
@@ -22,7 +22,7 @@ extension UIImageView {
             if let data = data {
                 DispatchQueue.main.async {
                     let image = UIImage(data: data)
-                    self.image = image
+                    self.image = image?.cropping2square()
                     UIImageView.imageCache.setObject(image!, forKey: url.absoluteString as AnyObject)
                     completion(image)
                 }
