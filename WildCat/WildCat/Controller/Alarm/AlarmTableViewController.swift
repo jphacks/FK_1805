@@ -21,6 +21,10 @@ class AlarmTableViewController: UITableViewController {
         refreshControl?.addTarget(self, action: #selector(self.refreshData(sender:)), for: .valueChanged)
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        self.setup()
+    }
+
     private func setup() {
         let data = Array(Alarm.read())
         self.alarms = data
@@ -59,5 +63,9 @@ class AlarmTableViewController: UITableViewController {
             tableView.deleteRows(at: [indexPath], with: .fade)
             return
         }
+    }
+
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 100
     }
 }

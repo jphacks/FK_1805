@@ -78,12 +78,12 @@
                         <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="k6k-gB-TXu">
                             <rect key="frame" x="58" y="7" width="259" height="30"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <color key="backgroundColor" red="0.1764468252658844" green="0.17648428678512573" blue="0.17644444108009338" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="backgroundColor" name="BackgroundColor"/>
                             <segments>
                                 <segment title="#彼女とデートなう"/>
                                 <segment title="保存"/>
                             </segments>
-                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="tintColor" name="TitleColor"/>
                             <connections>
                                 <action selector="segmentAction:" destination="wjh-Kb-DeI" eventType="valueChanged" id="Jvu-ps-cfA"/>
                             </connections>
@@ -100,6 +100,9 @@
         <image name="photo" width="36" height="21"/>
         <namedColor name="BackgroundColor">
             <color red="0.17647058823529413" green="0.17647058823529413" blue="0.17647058823529413" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="TitleColor">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

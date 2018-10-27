@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.15" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="SGl-5A-2Gk">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.23.1" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="SGl-5A-2Gk">
     <device id="retina6_1" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.9"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.16.1"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -15,11 +15,15 @@
         <scene sceneID="0sY-ta-YPC">
             <objects>
                 <navigationController id="SGl-5A-2Gk" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Neo-Gm-EtI">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="Neo-Gm-EtI">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" name="BackgroundColor"/>
+                        <color key="tintColor" name="ItemColor"/>
                         <color key="barTintColor" name="BackgroundColor"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
                     </navigationBar>
                     <connections>
                         <segue destination="guZ-oJ-5WM" kind="relationship" relationship="rootViewController" id="bLT-61-dFS"/>
@@ -34,9 +38,10 @@
             <objects>
                 <tableViewController id="guZ-oJ-5WM" customClass="ListPatternTableViewController" customModule="WildCat" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="ubu-Ko-JHw">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" name="BackgroundColor"/>
+                        <color key="tintColor" name="ItemColor"/>
                         <color key="separatorColor" name="BackgroundColor"/>
                         <color key="sectionIndexBackgroundColor" name="BackgroundColor"/>
                         <connections>
@@ -45,7 +50,7 @@
                         </connections>
                     </tableView>
                     <tabBarItem key="tabBarItem" title="Pattern" image="pattern" id="reg-qC-eK6"/>
-                    <navigationItem key="navigationItem" id="H3c-z2-814"/>
+                    <navigationItem key="navigationItem" title="Pattern" id="H3c-z2-814"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hSB-KX-GLg" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -69,6 +74,7 @@
                                 <items>
                                     <navigationItem title="新規作成" id="Efc-FM-Jd0">
                                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="Vsp-NK-daQ">
+                                            <color key="tintColor" name="ItemColor"/>
                                             <connections>
                                                 <action selector="dismissAction:" destination="bib-on-4CL" id="FYn-x1-Qe6"/>
                                             </connections>

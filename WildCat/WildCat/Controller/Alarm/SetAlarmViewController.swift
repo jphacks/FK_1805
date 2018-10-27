@@ -23,6 +23,8 @@ class SetAlarmViewController: UIViewController, PatternTableViewControllerDelega
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        timePicker.setValue(UIColor.white, forKey: "textColor")
     }
 
     func didFinishChoosePattern(pattern: Pattern) {
