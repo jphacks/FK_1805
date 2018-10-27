@@ -9,6 +9,23 @@
 import Foundation
 import UserNotifications
 
+protocol NotificationManagerInterface {
+    func addNotification(Alarm: Alarm)
+    func deleteNotification(Alarm: Alarm)
+}
+
+class NotificationManager: NotificationManagerInterface {
+    func addNotification(Alarm: Alarm) {
+        
+    }
+
+    func deleteNotification(Alarm: Alarm) {
+        <#code#>
+    }
+
+
+}
+
 class AlarmManager {
     class func allowNotification() -> Void {
         let center = UNUserNotificationCenter.current()
