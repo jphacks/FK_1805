@@ -161,7 +161,6 @@
 			isa = PBXGroup;
 			children = (
 				E623539621804FBD009E0040 /* UIColor+Extension.swift */,
-<<<<<<< HEAD
 				75458DC521817F210031A97F /* LocalPhoto.swift */,
 			);
 			path = Common;
