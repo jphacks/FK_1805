@@ -14,6 +14,7 @@ class PhotosCollectionViewController: UICollectionViewController, SKPhotoBrowser
 
     private let refreshControl = UIRefreshControl()
     private var page: Int = 0
+    private var browser: SKPhotoBrowser?
 
     // Twitter
     private var images = [UIImage]()
@@ -102,16 +103,6 @@ class PhotosCollectionViewController: UICollectionViewController, SKPhotoBrowser
         }.resume()
     }
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
-    }
-    */
-
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
@@ -153,20 +144,20 @@ class PhotosCollectionViewController: UICollectionViewController, SKPhotoBrowser
         switch status {
         case .Twitter:
             images = skPhotos
-            let browser = SKPhotoBrowser(originImage: self.images[indexPath.item], photos: images, animatedFromView: cell)
-            browser.delegate = self
+            self.browser = SKPhotoBrowser(originImage: self.images[indexPath.item], photos: images, animatedFromView: cell)
+            browser!.delegate = self
             let addImage = UIImageView(image: UIImage(named: "Add"))
             addImage.isUserInteractionEnabled = true
             addImage.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(save)))
             addImage.translatesAutoresizingMaskIntoConstraints = false
-            browser.view.addSubview(addImage)
-            let customMargins = browser.view.layoutMarginsGuide
+            browser!.view.addSubview(addImage)
+            let customMargins = browser!.view.layoutMarginsGuide
             addImage.trailingAnchor.constraint(equalTo: customMargins.trailingAnchor, constant: -16).isActive = true
             addImage.bottomAnchor.constraint(equalTo: customMargins.bottomAnchor, constant: -40).isActive = true
             addImage.heightAnchor.constraint(equalToConstant: 20.0).isActive = true
             addImage.widthAnchor.constraint(equalToConstant: 40.0).isActive = true
-            browser.initializePageIndex(indexPath.item)
-            present(browser, animated: true, completion: nil)
+            browser!.initializePageIndex(indexPath.item)
+            present(browser!, animated: true, completion: nil)
         case .Save:
             images = saveSKPhotos
             let browser = SKPhotoBrowser(originImage: originImage ?? UIImage(), photos: images, animatedFromView: cell)
@@ -181,6 +172,7 @@ class PhotosCollectionViewController: UICollectionViewController, SKPhotoBrowser
 
     @objc private func save(sender: UITapGestureRecognizer) {
         LocalPhoto.savePhoto(skPhotos[self.index].underlyingImage, toAlbum: "WildCat") { (imagePath) in
+            self.browser?.showAlert(title: "画像を保存しました", message: "")
             let remotePath = RemotePath()
             remotePath.id = imagePath
             remotePath.remotePath = self.photos[self.index].imagePath
