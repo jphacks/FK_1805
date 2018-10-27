@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="SGl-5A-2Gk">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.15" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="SGl-5A-2Gk">
     <device id="retina6_1" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.9"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -35,43 +35,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="patternCell" rowHeight="105" id="soa-ip-p2I" customClass="PatternTableViewCell" customModule="WildCat" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="414" height="105"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="soa-ip-p2I" id="Auc-WJ-stB">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="104.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bMm-H3-q5k">
-                                            <rect key="frame" x="20" y="11" width="83" height="83"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" secondItem="bMm-H3-q5k" secondAttribute="height" multiplier="1:1" id="8br-j2-aUx"/>
-                                            </constraints>
-                                        </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="メッセージ" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t9K-Cj-ITR">
-                                            <rect key="frame" x="119" y="0.0" width="275" height="104.5"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                    <constraints>
-                                        <constraint firstItem="t9K-Cj-ITR" firstAttribute="leading" relation="lessThanOrEqual" secondItem="bMm-H3-q5k" secondAttribute="trailing" constant="16" id="2a8-tf-pHP"/>
-                                        <constraint firstItem="bMm-H3-q5k" firstAttribute="bottom" secondItem="Auc-WJ-stB" secondAttribute="bottomMargin" id="FhJ-bP-XXZ"/>
-                                        <constraint firstItem="t9K-Cj-ITR" firstAttribute="top" secondItem="Auc-WJ-stB" secondAttribute="top" id="GMt-St-Y06"/>
-                                        <constraint firstItem="t9K-Cj-ITR" firstAttribute="trailing" secondItem="Auc-WJ-stB" secondAttribute="trailingMargin" id="P95-Sq-E7z"/>
-                                        <constraint firstItem="bMm-H3-q5k" firstAttribute="top" secondItem="Auc-WJ-stB" secondAttribute="topMargin" id="cs3-Hi-Amu"/>
-                                        <constraint firstAttribute="bottom" secondItem="t9K-Cj-ITR" secondAttribute="bottom" id="i3c-D1-RAk"/>
-                                        <constraint firstItem="bMm-H3-q5k" firstAttribute="leading" secondItem="Auc-WJ-stB" secondAttribute="leadingMargin" id="rUB-iD-g7i"/>
-                                    </constraints>
-                                </tableViewCellContentView>
-                                <connections>
-                                    <outlet property="messageLabel" destination="t9K-Cj-ITR" id="YLF-Se-xzo"/>
-                                    <outlet property="phtoImage" destination="bMm-H3-q5k" id="YBO-Fn-xkv"/>
-                                </connections>
-                            </tableViewCell>
-                        </prototypes>
                         <connections>
                             <outlet property="dataSource" destination="guZ-oJ-5WM" id="kRb-mw-WuI"/>
                             <outlet property="delegate" destination="guZ-oJ-5WM" id="2vl-ov-lQZ"/>

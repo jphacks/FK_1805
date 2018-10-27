@@ -10,37 +10,56 @@ import UIKit
 
 class AlarmTableViewController: UITableViewController {
 
+    // MARK: - Propaties
+
+    private var alarms:[Alarm] = []
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.setup()
+        refreshControl = UIRefreshControl()
+        refreshControl?.addTarget(self, action: #selector(self.refreshData(sender:)), for: .valueChanged)
+    }
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
+    private func setup() {
+        let data = Array(Alarm.read())
+        self.alarms = data
+        self.tableView.reloadData()
+    }
 
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+    @objc func refreshData(sender: UIRefreshControl) {
+        let data = Array(Alarm.read())
+        self.alarms = data
+        self.tableView.reloadData()
+        refreshControl?.endRefreshing()
     }
 
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+        return self.alarms.count
     }
 
-    /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
+        let cell = tableView.dequeueReusableCell(withIdentifier: "alarmCell", for: indexPath) as! AlarmTableViewCell
+        let targetAlarm = self.alarms[indexPath.item]
+        cell.update(target: targetAlarm)
         return cell
     }
-    */
+
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "alarmCell", for: indexPath) as! AlarmTableViewCell
+            let targetAlarm = self.alarms[indexPath.item]
+            Alarm.delete(alarm: targetAlarm)
+            cell.update(target: targetAlarm)
+            return
+        }
+    }
 
     /*
     // Override to support conditional editing of the table view.
