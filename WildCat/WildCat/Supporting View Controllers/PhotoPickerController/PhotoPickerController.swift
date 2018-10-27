@@ -20,10 +20,19 @@ class PhotoPickerController: UIViewController, UICollectionViewDelegate, UIColle
     private let imageManager = PHCachingImageManager()
     @IBOutlet weak var collectionView: UICollectionView!
 
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
+        super.init(nibName: "PhotoPickerController", bundle: nil)
+    }
+
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         self.collectionView.delegate = self
         self.collectionView.dataSource = self
+        self.updateAssets()
     }
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -42,10 +51,25 @@ class PhotoPickerController: UIViewController, UICollectionViewDelegate, UIColle
     }
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        self.collectionView.selectItem(at: indexPath, animated: true, scrollPosition: UICollectionView.ScrollPosition.bottom)
+        let result = self.fetchResult.object(at: indexPath.row)
+        if let delegate = self.delegate {
+            delegate.didSelectPhoto(asset: result)
+        }
     }
-    @IBAction func doneAction(_ sender: Any) {
-        
+
+    @IBAction func dismissAction(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
+    }
+}
+
+extension PhotoPickerController {
+
+    fileprivate func updateAssets() {
+        let fetchOptions = PHFetchOptions()
+        fetchOptions.predicate = NSPredicate(format: "title = %@", "WildCat")
+        let collection = PHAssetCollection.fetchAssetCollections(with: .album, subtype: .albumRegular, options: fetchOptions)
+        collection.enumerateObjects { (collection, index, stop) in
+            self.fetchResult = PHAsset.fetchAssets(in: collection, options: nil)
+        }
     }
 }

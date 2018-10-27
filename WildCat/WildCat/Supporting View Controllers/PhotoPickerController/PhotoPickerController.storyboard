@@ -63,11 +63,8 @@
                                     <navigationItem title="写真を選択" id="eiP-Si-yJU">
                                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="iPl-eU-ysL">
                                             <color key="tintColor" name="ItemColor"/>
-                                        </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="done" id="xCZ-KT-y8T">
-                                            <color key="tintColor" name="ItemColor"/>
                                             <connections>
-                                                <action selector="doneAction:" destination="YgM-Ps-TCh" id="4UD-dP-Jj1"/>
+                                                <action selector="dismissAction:" destination="YgM-Ps-TCh" id="t0d-uS-eyX"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
