@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import UserNotifications
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -15,7 +16,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        let center = UNUserNotificationCenter.current()
+        var options = UNAuthorizationOptions()
+        options.insert(UNAuthorizationOptions.alert)
+        options.insert(UNAuthorizationOptions.badge)
+        options.insert(UNAuthorizationOptions.sound)
+        center.requestAuthorization(options: options) { (granted, error) in
+            if granted {
+                print("許可する")
+            } else {
+                print("許可しない")
+            }
+        }
         return true
     }
 
