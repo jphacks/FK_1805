@@ -16,6 +16,22 @@ class AlarmTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.setup()
+        refreshControl = UIRefreshControl()
+        refreshControl?.addTarget(self, action: #selector(self.refreshData(sender:)), for: .valueChanged)
+    }
+
+    private func setup() {
+        let data = Array(Alarm.read())
+        self.alarms = data
+        self.tableView.reloadData()
+    }
+
+    @objc func refreshData(sender: UIRefreshControl) {
+        let data = Array(Alarm.read())
+        self.alarms = data
+        self.tableView.reloadData()
+        refreshControl?.endRefreshing()
     }
 
     // MARK: - Table view data source
@@ -33,6 +49,16 @@ class AlarmTableViewController: UITableViewController {
         let targetAlarm = self.alarms[indexPath.item]
         cell.update(target: targetAlarm)
         return cell
+    }
+
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "alarmCell", for: indexPath) as! AlarmTableViewCell
+            let targetAlarm = self.alarms[indexPath.item]
+            Alarm.delete(alarm: targetAlarm)
+            cell.update(target: targetAlarm)
+            return
+        }
     }
 
     /*

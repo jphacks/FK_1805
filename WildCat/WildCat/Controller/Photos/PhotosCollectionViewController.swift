@@ -8,6 +8,7 @@
 
 import UIKit
 import SKPhotoBrowser
+import Photos
 
 class PhotosCollectionViewController: UICollectionViewController, SKPhotoBrowserDelegate {
 
@@ -161,5 +162,4 @@ class PhotosCollectionViewController: UICollectionViewController, SKPhotoBrowser
             self.localRefresh()
         }
     }
-
 }

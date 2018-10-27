@@ -17,6 +17,13 @@ public class PatternTableViewController: UITableViewController {
     var patterns:[Pattern] = []
     var delegate: PatternTableViewControllerDelegate?
 
+    override public func viewDidLoad() {
+        super.viewDidLoad()
+        let cellNib = UINib(nibName: "PatternTableViewCell", bundle: nil)
+        self.tableView.register(cellNib, forCellReuseIdentifier: "patternCell")
+
+    }
+
     // MARK: - Table view data source
 
     override public func numberOfSections(in tableView: UITableView) -> Int {
@@ -28,7 +35,7 @@ public class PatternTableViewController: UITableViewController {
     }
 
     override public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "patternCell", for: indexPath) as! PatternTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "patternCell") as! PatternTableViewCell
         let targetPattern = self.patterns[indexPath.item]
         var image = UIImage(named: "black")!
         LocalPhoto.load(localIdentifer: targetPattern.imagePath) { (resultImage) in

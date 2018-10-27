@@ -68,7 +68,9 @@
                             <outlet property="delegate" destination="wjh-Kb-DeI" id="aMv-6m-1ii"/>
                         </connections>
                     </collectionView>
-                    <tabBarItem key="tabBarItem" title="Photo" id="rHf-gh-1i3"/>
+                    <tabBarItem key="tabBarItem" title="Photo" image="photo" id="rHf-gh-1i3">
+                        <color key="badgeColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </tabBarItem>
                     <navigationItem key="navigationItem" id="VD3-25-4TP">
                         <nil key="title"/>
                         <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="k6k-gB-TXu">
@@ -92,4 +94,7 @@
             <point key="canvasLocation" x="140" y="125.4872563718141"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="photo" width="36" height="21"/>
+    </resources>
 </document>
