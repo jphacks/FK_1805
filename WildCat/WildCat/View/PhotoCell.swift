@@ -18,20 +18,14 @@ class PhotoCell: UICollectionViewCell {
             self.imageView.image = UIImage(named: "black")
             return
         }
-//        URLSession.shared.dataTask(with: url) { (data, _, _) in
-//            if let data = data {
-//                let image = UIImage(data: data)
-//                DispatchQueue.main.async {
-//                    self.imageView.image = image?.cropping2square()
-//                }
-//                completion(image)
-//            }
-//        }.resume()
-        
-        self.imageView.kf.setImage(with: url) { (image, error, _, _) in
-            if error == nil {
-                completion(image)
-            }
+        imageView.cacheImage(with: url) { (image) in
+            completion(image)
         }
+    }
+
+    override func prepareForReuse() {
+        super.prepareForReuse()
+
+        self.imageView.image = nil
     }
 }

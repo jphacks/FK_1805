@@ -16,6 +16,7 @@ class PhotosCollectionViewController: UICollectionViewController, SKPhotoBrowser
     private var page: Int = 1
 
     // Twitter
+    private var images = [UIImage]()
     private var photos = [Photo]()
     private var skPhotos = [SKPhoto]()
     private var status = SegmentStatus.Twitter
@@ -33,6 +34,7 @@ class PhotosCollectionViewController: UICollectionViewController, SKPhotoBrowser
         self.refreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged)
 
         for _ in 0..<30 {
+            images.append(UIImage(named: "black")!)
             skPhotos.append(SKPhoto.photoWithImage(UIImage(named: "black")!))
         }
         SKPhotoBrowserOptions.displayBackAndForwardButton = false
@@ -129,6 +131,7 @@ class PhotosCollectionViewController: UICollectionViewController, SKPhotoBrowser
         case .Twitter:
             cell.configure(photo: photos[indexPath.item]) { (image) in
                 if let image = image {
+                    self.images[indexPath.item] = image
                     let skImage = SKPhoto.photoWithImage(image)
                     self.skPhotos[indexPath.item] = skImage
                 }
@@ -149,7 +152,7 @@ class PhotosCollectionViewController: UICollectionViewController, SKPhotoBrowser
         switch status {
         case .Twitter:
             images = skPhotos
-            let browser = SKPhotoBrowser(originImage: originImage ?? UIImage(), photos: images, animatedFromView: cell)
+            let browser = SKPhotoBrowser(originImage: self.images[indexPath.item] ?? UIImage(), photos: images, animatedFromView: cell)
             browser.delegate = self
             let addImage = UIImageView(image: UIImage(named: "Add"))
             addImage.isUserInteractionEnabled = true
