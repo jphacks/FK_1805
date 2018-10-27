@@ -9,11 +9,6 @@
 import UIKit
 import Photos
 
-struct PatternViewModel {
-    var message: String
-    var image: UIImage
-}
-
 class PatternTableViewController: UITableViewController {
 
     private var patterns:[Pattern] = []
