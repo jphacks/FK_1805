@@ -9,7 +9,7 @@
 import UIKit
 import Photos
 
-class AddPatternViewController: TextViewViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class AddPatternViewController: TextViewViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, PhotoPickerControllerDelegate {
 
     @IBOutlet weak private var photoImageView: UIImageView!
     @IBOutlet weak private var messageTextView: CustomTextView!
@@ -22,11 +22,18 @@ class AddPatternViewController: TextViewViewController, UIImagePickerControllerD
         self.setUpNotificationForTextView()
         self.imagePicker.delegate = self
     }
+
+    func didSelectPhoto(asset: PHAsset) {
+        self.localIdentifier = asset.localIdentifier
+    }
     
     @IBAction func selectImageAction(_ sender: Any) {
-        self.imagePicker.allowsEditing = false
-        self.imagePicker.sourceType = .photoLibrary
-        self.present(imagePicker, animated: true, completion: nil)
+//        self.imagePicker.allowsEditing = false
+//        self.imagePicker.sourceType = .photoLibrary
+//        self.present(imagePicker, animated: true, completion: nil)
+        let next = PhotoPickerController()
+        next.delegate = self
+        self.present(next, animated: true, completion: nil)
     }
 
     @IBAction func addPatternAction(_ sender: Any) {

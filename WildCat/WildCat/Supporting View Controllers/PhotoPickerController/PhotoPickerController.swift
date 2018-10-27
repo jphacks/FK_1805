@@ -13,6 +13,7 @@ protocol PhotoPickerControllerDelegate {
     func didSelectPhoto(asset: PHAsset)
 }
 
+@objc(PhotoPickerController)
 class PhotoPickerController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
 
     var delegate: PhotoPickerControllerDelegate?
@@ -23,15 +24,22 @@ class PhotoPickerController: UIViewController, UICollectionViewDelegate, UIColle
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: "PhotoPickerController", bundle: nil)
     }
+    
+    init() {
+        super.init(nibName: "PhotoPickerController", bundle: nil)
+    }
 
     required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        super.init(coder: aDecoder)
+
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.collectionView.delegate = self
         self.collectionView.dataSource = self
+        let cellNib = UINib(nibName: "PhotoPickerCell", bundle: nil)
+        self.collectionView.register(cellNib, forCellWithReuseIdentifier: "photoCell")
         self.updateAssets()
     }
 
