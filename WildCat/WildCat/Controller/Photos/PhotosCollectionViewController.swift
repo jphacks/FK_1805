@@ -13,6 +13,7 @@ import Photos
 class PhotosCollectionViewController: UICollectionViewController, SKPhotoBrowserDelegate {
 
     private let refreshControl = UIRefreshControl()
+    private var page: Int = 1
 
     // Twitter
     private var photos = [Photo]()
@@ -31,7 +32,7 @@ class PhotosCollectionViewController: UICollectionViewController, SKPhotoBrowser
         self.collectionView.refreshControl = refreshControl
         self.refreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged)
 
-        for _ in 0..<25 {
+        for _ in 0..<30 {
             skPhotos.append(SKPhoto.photoWithImage(UIImage(named: "black")!))
         }
         SKPhotoBrowserOptions.displayBackAndForwardButton = false
@@ -51,7 +52,7 @@ class PhotosCollectionViewController: UICollectionViewController, SKPhotoBrowser
     }
 
     @objc private func refresh() {
-
+        getData()
     }
 
     @IBAction private func segmentAction(_ sender: UISegmentedControl) {
@@ -67,17 +68,35 @@ class PhotosCollectionViewController: UICollectionViewController, SKPhotoBrowser
     }
 
     private func getData() {
-        guard let path = Bundle.main.path(forResource: "Photo", ofType: "json") else { return }
-        let url = URL(fileURLWithPath: path)
-        do {
-            let data = try Data(contentsOf: url)
-            let photos = try
-                JSONDecoder().decode([Photo].self, from: data)
-            self.photos = photos
-            self.collectionView.reloadData()
-        } catch  {
-            print(error)
-        }
+        // Sample
+//        guard let path = Bundle.main.path(forResource: "Photo", ofType: "json") else { return }
+//        let url = URL(fileURLWithPath: path)
+//        do {
+//            let data = try Data(contentsOf: url)
+//            let photos = try
+//                JSONDecoder().decode([Photo].self, from: data)
+//            self.photos = photos
+//            self.collectionView.reloadData()
+//        } catch  {
+//            print(error)
+//        }
+
+        // RemoteURL
+        let url = URL(string: "http://13.115.170.124:3000/api/images/?size=30&offset=0")!
+        URLSession.shared.dataTask(with: url) { (data, _, error) in
+            if let data = data {
+                do {
+                    let photos = try JSONDecoder().decode([Photo].self, from: data)
+                    self.photos = photos
+                    DispatchQueue.main.async {
+                        self.collectionView.reloadData()
+                        self.refreshControl.endRefreshing()
+                    }
+                } catch {
+                    print(error)
+                }
+            }
+        }.resume()
     }
 
     /*

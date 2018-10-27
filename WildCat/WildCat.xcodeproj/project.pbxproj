@@ -13,6 +13,7 @@
 		7569B061217B04AE0069EADB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7569B060217B04AE0069EADB /* Assets.xcassets */; };
 		7569B064217B04AE0069EADB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7569B062217B04AE0069EADB /* LaunchScreen.storyboard */; };
 		7574B9B92184368000D214F4 /* RemotePath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7574B9B82184368000D214F4 /* RemotePath.swift */; };
+		7574B9BB21844BC500D214F4 /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7574B9BA21844BC500D214F4 /* UIImage+Extension.swift */; };
 		75B18821218053440081D7DE /* PhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75B18820218053440081D7DE /* PhotoCell.swift */; };
 		75B18823218053BD0081D7DE /* Photo.json in Resources */ = {isa = PBXBuildFile; fileRef = 75B18822218053BD0081D7DE /* Photo.json */; };
 		75B18825218054550081D7DE /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75B18824218054550081D7DE /* Photo.swift */; };
@@ -73,6 +74,7 @@
 		7569B065217B04AE0069EADB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7569B06C217B06540069EADB /* Kingfisher.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kingfisher.framework; path = Carthage/Build/iOS/Kingfisher.framework; sourceTree = "<group>"; };
 		7574B9B82184368000D214F4 /* RemotePath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemotePath.swift; sourceTree = "<group>"; };
+		7574B9BA21844BC500D214F4 /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
 		75B18820218053440081D7DE /* PhotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCell.swift; sourceTree = "<group>"; };
 		75B18822218053BD0081D7DE /* Photo.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Photo.json; sourceTree = "<group>"; };
 		75B18824218054550081D7DE /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
@@ -180,6 +182,7 @@
 				E6EAEC99218429D5009882C9 /* NotificationManager.swift */,
 				E623539621804FBD009E0040 /* UIColor+Extension.swift */,
 				75458DC521817F210031A97F /* LocalPhoto.swift */,
+				7574B9BA21844BC500D214F4 /* UIImage+Extension.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -353,6 +356,7 @@
 				FB463D5D217F5EF400C6B1CC /* PhotosCollectionViewController.swift in Sources */,
 				FBEE7D312183ED9B007C4CAB /* SetAlarmViewController.swift in Sources */,
 				75D2419D217F6EAA007E81BD /* Helper Files.swift in Sources */,
+				7574B9BB21844BC500D214F4 /* UIImage+Extension.swift in Sources */,
 				7574B9B92184368000D214F4 /* RemotePath.swift in Sources */,
 				FBED01EE218406510034D43F /* SelectPatternTableViewController.swift in Sources */,
 				75B18821218053440081D7DE /* PhotoCell.swift in Sources */,
