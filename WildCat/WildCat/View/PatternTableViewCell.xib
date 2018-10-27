@@ -32,6 +32,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
+                <color key="backgroundColor" name="LabelColor"/>
                 <constraints>
                     <constraint firstAttribute="bottomMargin" secondItem="0hs-5e-89i" secondAttribute="bottom" id="6uG-8I-a0J"/>
                     <constraint firstItem="0xc-kU-r7c" firstAttribute="top" secondItem="HgQ-Yn-J0a" secondAttribute="topMargin" id="Adw-PH-Oyq"/>

@@ -36,7 +36,9 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="ubu-Ko-JHw">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" name="LabelColor"/>
+                        <color key="backgroundColor" name="BackgroundColor"/>
+                        <color key="separatorColor" name="BackgroundColor"/>
+                        <color key="sectionIndexBackgroundColor" name="BackgroundColor"/>
                         <connections>
                             <outlet property="dataSource" destination="guZ-oJ-5WM" id="kRb-mw-WuI"/>
                             <outlet property="delegate" destination="guZ-oJ-5WM" id="2vl-ov-lQZ"/>
@@ -93,7 +95,8 @@
                             </imageView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="メッセージを入力" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="ln7-YG-Yh1" customClass="CustomTextView" customModule="WildCat" customModuleProvider="target">
                                 <rect key="frame" x="36" y="303" width="342" height="447"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" name="LabelColor"/>
+                                <color key="textColor" name="TitleColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
@@ -112,7 +115,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" name="LabelColor"/>
+                        <color key="backgroundColor" name="BackgroundColor"/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="ln7-YG-Yh1" secondAttribute="trailing" constant="16" id="8tE-k3-ZZN"/>
                             <constraint firstItem="8HI-iX-jca" firstAttribute="width" secondItem="OFe-Lz-GdK" secondAttribute="width" id="CkG-re-vEm"/>
