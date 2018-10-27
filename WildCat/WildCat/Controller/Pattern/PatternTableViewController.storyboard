@@ -65,7 +65,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4rs-9F-HmW">
+                            <navigationBar contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4rs-9F-HmW">
                                 <rect key="frame" x="0.0" y="20" width="320" height="44"/>
                                 <color key="barTintColor" name="BackgroundColor"/>
                                 <textAttributes key="titleTextAttributes">
@@ -73,10 +73,16 @@
                                 </textAttributes>
                                 <items>
                                     <navigationItem title="新規作成" id="Efc-FM-Jd0">
-                                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="Vsp-NK-daQ">
+                                        <barButtonItem key="leftBarButtonItem" title="キャンセル" id="Vsp-NK-daQ">
                                             <color key="tintColor" name="ItemColor"/>
                                             <connections>
                                                 <action selector="dismissAction:" destination="bib-on-4CL" id="FYn-x1-Qe6"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" title="完了" style="done" id="WxO-1V-qqI">
+                                            <color key="tintColor" name="ItemColor"/>
+                                            <connections>
+                                                <action selector="addPatternAction:" destination="bib-on-4CL" id="3aV-dT-cr5"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -99,20 +105,6 @@
                                     <constraint firstAttribute="width" secondItem="OFe-Lz-GdK" secondAttribute="height" multiplier="1:1" id="SZr-Xf-idY"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LUY-TE-Nzt">
-                                <rect key="frame" x="32" y="496" width="256" height="40"/>
-                                <color key="backgroundColor" name="ItemColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="GnV-xR-Lm0"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="作成">
-                                    <color key="titleColor" name="TitleColor"/>
-                                </state>
-                                <connections>
-                                    <action selector="addPatternAction:" destination="bib-on-4CL" eventType="touchUpInside" id="XBo-Bk-wqU"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="メッセージを入力" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yhr-qd-m8L">
                                 <rect key="frame" x="32" y="236" width="114.5" height="32"/>
                                 <constraints>
@@ -140,9 +132,7 @@
                             <constraint firstItem="Yhr-qd-m8L" firstAttribute="top" secondItem="OFe-Lz-GdK" secondAttribute="bottom" constant="32" id="FdX-EH-XEx"/>
                             <constraint firstItem="OFe-Lz-GdK" firstAttribute="top" secondItem="4rs-9F-HmW" secondAttribute="bottom" constant="32" id="Qbd-7e-uBQ"/>
                             <constraint firstItem="OFe-Lz-GdK" firstAttribute="leading" secondItem="eV7-8w-jer" secondAttribute="leadingMargin" constant="16" id="RMJ-Cm-slG"/>
-                            <constraint firstAttribute="bottomMargin" secondItem="LUY-TE-Nzt" secondAttribute="bottom" constant="32" id="SYI-fD-f5v"/>
                             <constraint firstItem="8HI-iX-jca" firstAttribute="centerY" secondItem="OFe-Lz-GdK" secondAttribute="centerY" id="Tpf-ye-bJd"/>
-                            <constraint firstItem="LUY-TE-Nzt" firstAttribute="leading" secondItem="eV7-8w-jer" secondAttribute="leadingMargin" constant="16" id="UVe-lz-z4t"/>
                             <constraint firstItem="8HI-iX-jca" firstAttribute="leading" secondItem="OFe-Lz-GdK" secondAttribute="trailing" constant="40" id="V0D-6V-Q6G"/>
                             <constraint firstItem="4rs-9F-HmW" firstAttribute="leading" secondItem="Z4e-Zi-izT" secondAttribute="leading" id="Wg1-F5-f1D"/>
                             <constraint firstItem="ln7-YG-Yh1" firstAttribute="leading" secondItem="eV7-8w-jer" secondAttribute="leadingMargin" constant="16" id="a9Z-CD-qpH"/>
@@ -150,7 +140,6 @@
                             <constraint firstItem="4rs-9F-HmW" firstAttribute="trailing" secondItem="Z4e-Zi-izT" secondAttribute="trailing" id="mhU-Ef-fN4"/>
                             <constraint firstItem="ln7-YG-Yh1" firstAttribute="leading" secondItem="Yhr-qd-m8L" secondAttribute="leading" id="mmU-Aj-vkT"/>
                             <constraint firstItem="4rs-9F-HmW" firstAttribute="top" secondItem="Z4e-Zi-izT" secondAttribute="top" id="p61-cm-zwl"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="LUY-TE-Nzt" secondAttribute="trailing" constant="16" id="t4y-GP-XUq"/>
                             <constraint firstAttribute="trailingMargin" secondItem="8HI-iX-jca" secondAttribute="trailing" constant="16" id="vTS-Id-REB"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Z4e-Zi-izT"/>
