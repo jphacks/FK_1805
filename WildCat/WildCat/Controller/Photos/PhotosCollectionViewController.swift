@@ -90,6 +90,7 @@ class PhotosCollectionViewController: UICollectionViewController, SKPhotoBrowser
                     self.photos = photos
                     DispatchQueue.main.async {
                         self.collectionView.reloadData()
+                        self.refreshControl.endRefreshing()
                     }
                 } catch {
                     print(error)
