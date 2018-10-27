@@ -75,7 +75,7 @@ class LocalPhoto {
                     photos.append(image)
                 }
 
-                let manager = PHImageManager()
+                let manager = PHCachingImageManager()
                 var images = [UIImage]()
                 for photo in photos {
                     print("width: \(photo.pixelWidth), height: \(photo.pixelHeight)")
@@ -86,7 +86,6 @@ class LocalPhoto {
                 }
             }
         }
-        photos.first(where: { $0.localIdentifier == "" })
     }
 }
 
