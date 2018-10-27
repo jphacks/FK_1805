@@ -27,10 +27,10 @@
             </objects>
             <point key="canvasLocation" x="-583" y="-276"/>
         </scene>
-        <!--Pattern Table View Controller-->
+        <!--List Pattern Table View Controller-->
         <scene sceneID="UT8-SL-GWx">
             <objects>
-                <tableViewController id="guZ-oJ-5WM" customClass="PatternTableViewController" customModule="WildCat" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="guZ-oJ-5WM" customClass="ListPatternTableViewController" customModule="WildCat" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="ubu-Ko-JHw">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -114,7 +114,7 @@
                                     <constraint firstAttribute="width" secondItem="OFe-Lz-GdK" secondAttribute="height" multiplier="1:1" id="SZr-Xf-idY"/>
                                 </constraints>
                             </imageView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="メッセージを入力" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="ln7-YG-Yh1">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="メッセージを入力" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="ln7-YG-Yh1" customClass="CustomTextView" customModule="WildCat" customModuleProvider="target">
                                 <rect key="frame" x="36" y="303" width="342" height="447"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -157,7 +157,7 @@
                         <viewLayoutGuide key="safeArea" id="Z4e-Zi-izT"/>
                     </view>
                     <connections>
-                        <outlet property="messageTextView" destination="ln7-YG-Yh1" id="956-S1-B0f"/>
+                        <outlet property="messageTextView" destination="ln7-YG-Yh1" id="Lh9-Bg-1w8"/>
                         <outlet property="photoImageView" destination="OFe-Lz-GdK" id="RF8-Tr-KhW"/>
                     </connections>
                 </viewController>

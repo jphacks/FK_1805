@@ -12,7 +12,7 @@ import Photos
 class AddPatternViewController: TextViewViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     @IBOutlet weak private var photoImageView: UIImageView!
-    @IBOutlet weak private var messageTextView: UITextView!
+    @IBOutlet weak private var messageTextView: CustomTextView!
     private let imagePicker = UIImagePickerController()
     private var localIdentifier: String?
 
