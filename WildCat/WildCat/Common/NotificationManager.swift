@@ -1,5 +1,5 @@
 //
-//  AlarmManager.swift
+//  NotificationManager.swift
 //  WildCat
 //
 //  Created by 陰山賢太 on 2018/10/25.
@@ -9,68 +9,50 @@
 import Foundation
 import UserNotifications
 
-protocol NotificationManagerInterface: class {
-    func addNotification(Alarm: Alarm)
-    func deleteNotification(Alarm: Alarm)
+protocol NotificationManagerInterface:class {
+    func addNotification(alarm: Alarm)
+    func deletePendingNotification(alarm: Alarm)
+    func deleteDeliveredNotification(alarm: Alarm)
 }
 
-class NotificationManager: NotificationManagerInterface {
+class NotificationManager:NSObject, NotificationManagerInterface, UNUserNotificationCenterDelegate {
 
+    override init() {}
 
-    func addNotification(Alarm: Alarm) {
-//        let center = UNUserNotificationCenter
-    }
-
-    func deleteNotification(Alarm: Alarm) {
-    }
-}
-
-
-
-import UIKit
-
-class SelectPatternTableViewController: PatternTableViewController, PatternTableViewControllerDelegate {
-    func didFinishChoosePattern(pattern: Pattern) {
-
-    }
-
-
-}
-
-class AlarmManager {
-    class func allowNotification() -> Void {
-        let center = UNUserNotificationCenter.current()
-        center.requestAuthorization(options: [.alert, .sound, .badge]) { (granted, error) in
-            if error != nil {
-                return
-            }
-
-            if granted {
-                print("通知許可")
-            } else {
-                print("通知拒否")
+    func addNotification(alarm: Alarm) {
+        if let pattern = alarm.pattern {
+            let content = UNMutableNotificationContent()
+            content.title = "やまこーちゃんちゃんちゃん"
+            content.body = pattern.message
+            let id = String(pattern.id)
+            /// set time
+            var dateComponents = Calendar.current.dateComponents([.hour, .minute], from: alarm.date)
+            dateComponents.hour = 15
+            dateComponents.minute = 57
+            let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: false)
+            // set notification
+            let request = UNNotificationRequest(identifier: id, content: content, trigger: trigger)
+            let center = UNUserNotificationCenter.current()
+            center.delegate = self
+            center.add(request) { (error) in
+                if error != nil {
+                    print("通知：エラー")
+                }
             }
         }
     }
 
-    class func setAlarm(alarm: Alarm) -> Void {
-        // 通知する時間をセット
-        var notificationTime = DateComponents()
-        notificationTime.hour = 12
-        notificationTime.minute = 0
-        let trigger = UNCalendarNotificationTrigger(dateMatching: notificationTime, repeats: false)
+    func deletePendingNotification(alarm: Alarm) {
+        let id = String(alarm.id)
+        let center = UNUserNotificationCenter.current()
+        center.delegate = self
+        center.removePendingNotificationRequests(withIdentifiers: [id])
+    }
 
-        // 通知する内容をセット
-        let content = UNMutableNotificationContent()
-        content.title = "Title"
-        content.body = (alarm.pattern?.message)!
-        content.sound = UNNotificationSound.default
-        content.attachments = [try! UNNotificationAttachment(identifier: "id", url: URL(fileReferenceLiteralResourceName: (alarm.pattern?.imagePath)!), options: nil)]
-
-        // 通知リクエストを作成
-        let request = UNNotificationRequest(identifier: "id", content: content, trigger: trigger)
-
-        // 通知セット
-        UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
+    func deleteDeliveredNotification(alarm: Alarm) {
+        let id = String(alarm.id)
+        let center = UNUserNotificationCenter.current()
+        center.delegate = self
+        center.removeDeliveredNotifications(withIdentifiers: [id])
     }
 }
