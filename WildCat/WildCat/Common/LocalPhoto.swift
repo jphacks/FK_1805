@@ -10,7 +10,7 @@ import Foundation
 import Photos
 
 class LocalPhoto {
-    class func savePhoto(_ image: UIImage, toAlbum albumName: String, completion: @escaping (String?) -> Void) {
+    class func savePhoto(_ image: UIImage, toAlbum albumName: String, completion: @escaping (String) -> Void) {
         let imageData = image.pngData()!
         let TempFilePath = "\(NSTemporaryDirectory())temp.jpg"
         var imageID: String? = nil
@@ -28,7 +28,7 @@ class LocalPhoto {
                     imageID = assetRequest.placeholderForCreatedAsset?.localIdentifier
                 }, completionHandler: { (isSuccess, error) in
                     if isSuccess {
-                        completion(imageID)
+                        completion(imageID!)
                     } else {
                         print(error ?? "error")
                     }

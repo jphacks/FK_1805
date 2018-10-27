@@ -158,7 +158,10 @@ class PhotosCollectionViewController: UICollectionViewController, SKPhotoBrowser
 
     @objc private func save(sender: UITapGestureRecognizer) {
         LocalPhoto.savePhoto(skPhotos[self.index].underlyingImage, toAlbum: "WildCat") { (imagePath) in
-            print(imagePath ?? "")
+            let remotePath = RemotePath()
+            remotePath.id = imagePath
+            remotePath.remotePath = self.photos[self.index].imagePath
+            RemotePath.add(path: remotePath)
             self.localRefresh()
         }
     }
