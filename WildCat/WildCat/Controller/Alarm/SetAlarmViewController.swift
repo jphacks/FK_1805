@@ -39,6 +39,7 @@ class SetAlarmViewController: UIViewController, PatternTableViewControllerDelega
 
     @IBAction func saveButtonTapped(_ sender: Any) {
         let alarm = Alarm()
+        alarm.id = Int(arc4random())
         alarm.date = timePicker.date
         alarm.pattern = self.new
         Alarm.add(alarm: alarm)
