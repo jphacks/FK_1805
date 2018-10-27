@@ -15,6 +15,7 @@
 		7574B9B92184368000D214F4 /* RemotePath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7574B9B82184368000D214F4 /* RemotePath.swift */; };
 		7574B9BB21844BC500D214F4 /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7574B9BA21844BC500D214F4 /* UIImage+Extension.swift */; };
 		7574B9BD21845F2200D214F4 /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7574B9BC21845F2200D214F4 /* UIImageView+Extension.swift */; };
+		7574B9BF2184650C00D214F4 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7574B9BE2184650C00D214F4 /* UIViewController+Extension.swift */; };
 		75B18821218053440081D7DE /* PhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75B18820218053440081D7DE /* PhotoCell.swift */; };
 		75B18823218053BD0081D7DE /* Photo.json in Resources */ = {isa = PBXBuildFile; fileRef = 75B18822218053BD0081D7DE /* Photo.json */; };
 		75B18825218054550081D7DE /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75B18824218054550081D7DE /* Photo.swift */; };
@@ -77,6 +78,7 @@
 		7574B9B82184368000D214F4 /* RemotePath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemotePath.swift; sourceTree = "<group>"; };
 		7574B9BA21844BC500D214F4 /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
 		7574B9BC21845F2200D214F4 /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
+		7574B9BE2184650C00D214F4 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		75B18820218053440081D7DE /* PhotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCell.swift; sourceTree = "<group>"; };
 		75B18822218053BD0081D7DE /* Photo.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Photo.json; sourceTree = "<group>"; };
 		75B18824218054550081D7DE /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
@@ -186,6 +188,7 @@
 				75458DC521817F210031A97F /* LocalPhoto.swift */,
 				7574B9BA21844BC500D214F4 /* UIImage+Extension.swift */,
 				7574B9BC21845F2200D214F4 /* UIImageView+Extension.swift */,
+				7574B9BE2184650C00D214F4 /* UIViewController+Extension.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -349,6 +352,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7574B9BF2184650C00D214F4 /* UIViewController+Extension.swift in Sources */,
 				FB463D5F217F5F0D00C6B1CC /* ListPatternTableViewController.swift in Sources */,
 				FB463D5B217F5ED900C6B1CC /* AlarmTableViewController.swift in Sources */,
 				E6EAEC9A218429D5009882C9 /* NotificationManager.swift in Sources */,
@@ -518,7 +522,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 9886BK756P;
+				DEVELOPMENT_TEAM = CWW3CV2X72;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -541,7 +545,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 9886BK756P;
+				DEVELOPMENT_TEAM = CWW3CV2X72;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
