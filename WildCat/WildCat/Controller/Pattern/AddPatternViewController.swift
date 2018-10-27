@@ -14,7 +14,7 @@ class AddPatternViewController: TextViewViewController, UIImagePickerControllerD
     @IBOutlet weak private var photoImageView: UIImageView!
     @IBOutlet weak private var messageTextView: UITextView!
     private let imagePicker = UIImagePickerController()
-    private var imageURL: String?
+    private var localIdentifier: String?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,11 +30,11 @@ class AddPatternViewController: TextViewViewController, UIImagePickerControllerD
     }
 
     @IBAction func addPatternAction(_ sender: Any) {
-        guard let imagePath = self.imageURL else { return }
+        guard let localIdentifier = self.localIdentifier else { return }
         let new = Pattern.init()
         new.id = Int(arc4random())
         new.message = self.messageTextView.text
-        new.imagePath = imagePath
+        new.imagePath = localIdentifier
         Pattern.add(pattern: new)
         dismiss(animated: true, completion: nil)
     }
@@ -48,7 +48,7 @@ extension AddPatternViewController {
             self.photoImageView.image = pickedImage
         }
         if let asset = info[UIImagePickerController.InfoKey.phAsset] as? PHAsset {
-            print(asset.localIdentifier)
+            self.localIdentifier = asset.localIdentifier
         }
         dismiss(animated: true, completion: nil)
     }
