@@ -16,7 +16,7 @@ class AlarmTableViewCell: UITableViewCell {
     @IBOutlet weak var photoImage: UIImageView!
     @IBOutlet weak var messageLabel: UILabel!
     @IBOutlet weak var alarmSwitch: UISwitch!
-
+    private var alarm: Alarm?
     // MARK: - Method
 
     override func awakeFromNib() {
@@ -28,6 +28,7 @@ class AlarmTableViewCell: UITableViewCell {
     }
 
     func update(target alarm:Alarm) {
+        self.alarm = alarm
         let formatter = DateFormatter()
         formatter.dateFormat = "HH:mm"
         self.timeLabel.text = formatter.string(from: alarm.date)
@@ -35,6 +36,21 @@ class AlarmTableViewCell: UITableViewCell {
         LocalPhoto.load(localIdentifer: (alarm.pattern?.imagePath)!) { (resultImage) in
             if let resultImage = resultImage {
                 self.photoImage.image = resultImage
+            }
+        }
+        if self.alarmSwitch.isOn {
+            NotificationManager().addNotification(alarm: alarm)
+        }
+    }
+
+    @IBAction func notificateAction(_ sender: UISwitch) {
+        let notificationManager = NotificationManager()
+        if let alarm = self.alarm {
+            if sender.isOn {
+                notificationManager.addNotification(alarm: alarm)
+            } else {
+                notificationManager.deletePendingNotification(alarm: alarm)
+                notificationManager.deleteDeliveredNotification(alarm: alarm)
             }
         }
     }
