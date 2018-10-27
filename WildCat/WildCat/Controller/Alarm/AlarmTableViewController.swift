@@ -53,10 +53,10 @@ class AlarmTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "alarmCell", for: indexPath) as! AlarmTableViewCell
             let targetAlarm = self.alarms[indexPath.item]
             Alarm.delete(alarm: targetAlarm)
-            cell.update(target: targetAlarm)
+            self.alarms.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .fade)
             return
         }
     }

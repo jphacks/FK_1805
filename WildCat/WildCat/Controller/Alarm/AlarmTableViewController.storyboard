@@ -99,27 +99,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="gcY-lI-zrc">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="216"/>
-                                <date key="date" timeIntervalSinceReferenceDate="562164391.78168595">
-                                    <!--2018-10-25 12:46:31 +0000-->
-                                </date>
-                            </datePicker>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dcO-uf-GQ1">
-                                <rect key="frame" x="107" y="318" width="160" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WF4-jG-jsE">
+                                <rect key="frame" x="100" y="379" width="175" height="33"/>
                                 <color key="backgroundColor" name="ItemColor"/>
-                                <state key="normal" title="パターンを選択">
-                                    <color key="titleColor" name="TitleColor"/>
-                                </state>
-                                <connections>
-                                    <action selector="selectPatternAction:" destination="KXk-aU-gjL" eventType="touchUpInside" id="DkQ-pw-BVV"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WF4-jG-jsE">
-                                <rect key="frame" x="170" y="393" width="34" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" name="ItemColor"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <state key="normal" title="Save">
                                     <color key="titleColor" name="TitleColor"/>
                                 </state>
@@ -127,12 +110,35 @@
                                     <action selector="saveButtonTapped:" destination="KXk-aU-gjL" eventType="touchUpInside" id="wLh-BN-PqN"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dcO-uf-GQ1">
+                                <rect key="frame" x="100" y="296" width="175" height="33"/>
+                                <color key="backgroundColor" name="ItemColor"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <state key="normal" title="パターンを選択">
+                                    <color key="titleColor" name="TitleColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="selectPatternAction:" destination="KXk-aU-gjL" eventType="touchUpInside" id="DkQ-pw-BVV"/>
+                                </connections>
+                            </button>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="gcY-lI-zrc">
+                                <rect key="frame" x="0.0" y="30" width="375" height="216"/>
+                                <date key="date" timeIntervalSinceReferenceDate="562164391.78168595">
+                                    <!--2018-10-25 12:46:31 +0000-->
+                                </date>
+                            </datePicker>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" name="LabelColor"/>
                         <constraints>
-                            <constraint firstItem="gcY-lI-zrc" firstAttribute="top" secondItem="JeB-B2-3Ol" secondAttribute="top" id="HIH-CH-7p7"/>
-                            <constraint firstItem="gcY-lI-zrc" firstAttribute="leading" secondItem="JeB-B2-3Ol" secondAttribute="leading" id="i5M-dW-TwO"/>
-                            <constraint firstItem="gcY-lI-zrc" firstAttribute="trailing" secondItem="JeB-B2-3Ol" secondAttribute="trailing" id="qvi-zU-5Wz"/>
+                            <constraint firstItem="JeB-B2-3Ol" firstAttribute="trailing" secondItem="WF4-jG-jsE" secondAttribute="trailing" constant="100" id="0Nf-fg-4Bc"/>
+                            <constraint firstItem="WF4-jG-jsE" firstAttribute="leading" secondItem="JeB-B2-3Ol" secondAttribute="leading" constant="100" id="5pj-Fw-Cgq"/>
+                            <constraint firstItem="gcY-lI-zrc" firstAttribute="trailing" secondItem="JeB-B2-3Ol" secondAttribute="trailing" id="5qX-f2-YGu"/>
+                            <constraint firstItem="JeB-B2-3Ol" firstAttribute="trailing" secondItem="dcO-uf-GQ1" secondAttribute="trailing" constant="100" id="HBe-Qx-l5W"/>
+                            <constraint firstItem="gcY-lI-zrc" firstAttribute="top" secondItem="JeB-B2-3Ol" secondAttribute="top" constant="30" id="KVe-rI-Wky"/>
+                            <constraint firstItem="dcO-uf-GQ1" firstAttribute="leading" secondItem="JeB-B2-3Ol" secondAttribute="leading" constant="100" id="QyT-SH-PeT"/>
+                            <constraint firstItem="gcY-lI-zrc" firstAttribute="leading" secondItem="JeB-B2-3Ol" secondAttribute="leading" id="Tgi-S8-RxL"/>
+                            <constraint firstItem="dcO-uf-GQ1" firstAttribute="top" secondItem="gcY-lI-zrc" secondAttribute="bottom" constant="50" id="VEj-eK-Rz7"/>
+                            <constraint firstItem="WF4-jG-jsE" firstAttribute="top" secondItem="dcO-uf-GQ1" secondAttribute="bottom" constant="50" id="mk9-HQ-Im1"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="JeB-B2-3Ol"/>
                     </view>
