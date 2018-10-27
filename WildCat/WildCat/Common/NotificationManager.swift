@@ -15,12 +15,23 @@ protocol NotificationManagerInterface {
 }
 
 class NotificationManager: NotificationManagerInterface {
+
+
     func addNotification(Alarm: Alarm) {
-        
+        let center = UNUserNotificationCenter
     }
 
     func deleteNotification(Alarm: Alarm) {
-        <#code#>
+    }
+}
+
+
+
+import UIKit
+
+class SelectPatternTableViewController: PatternTableViewController, PatternTableViewControllerDelegate {
+    func didFinishChoosePattern(pattern: Pattern) {
+
     }
 
 
