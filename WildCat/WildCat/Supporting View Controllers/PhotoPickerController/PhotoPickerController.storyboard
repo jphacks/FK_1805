@@ -11,10 +11,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Photo Picker Controller-->
         <scene sceneID="2BO-Ce-kEP">
             <objects>
-                <viewController id="YgM-Ps-TCh" sceneMemberID="viewController">
+                <viewController id="YgM-Ps-TCh" customClass="PhotoPickerController" customModule="WildCat" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="JLZ-FJ-vmR">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -29,13 +29,27 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="qcj-MS-vsm">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="qcj-MS-vsm" customClass="PhotoPickerCell" customModule="WildCat" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="126" height="124"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                             <rect key="frame" x="0.0" y="0.0" width="126" height="124"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Pbg-OD-UtK">
+                                                    <rect key="frame" x="8" y="28" width="110" height="88"/>
+                                                </imageView>
+                                            </subviews>
                                         </view>
+                                        <constraints>
+                                            <constraint firstItem="Pbg-OD-UtK" firstAttribute="leading" secondItem="qcj-MS-vsm" secondAttribute="leadingMargin" id="X6k-0S-GdE"/>
+                                            <constraint firstAttribute="trailingMargin" secondItem="Pbg-OD-UtK" secondAttribute="trailing" id="nPz-aE-SEG"/>
+                                            <constraint firstItem="Pbg-OD-UtK" firstAttribute="top" secondItem="qcj-MS-vsm" secondAttribute="topMargin" id="q7d-CQ-PYh"/>
+                                            <constraint firstAttribute="bottomMargin" secondItem="Pbg-OD-UtK" secondAttribute="bottom" id="yC0-xr-lhk"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="photoImageView" destination="Pbg-OD-UtK" id="f64-Mz-n0E"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
@@ -52,6 +66,9 @@
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" style="done" systemItem="done" id="xCZ-KT-y8T">
                                             <color key="tintColor" name="ItemColor"/>
+                                            <connections>
+                                                <action selector="doneAction:" destination="YgM-Ps-TCh" id="4UD-dP-Jj1"/>
+                                            </connections>
                                         </barButtonItem>
                                     </navigationItem>
                                 </items>
@@ -69,6 +86,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="JHp-cd-IAp"/>
                     </view>
+                    <connections>
+                        <outlet property="collectionView" destination="Ube-pP-uBM" id="54V-Zd-aPr"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="niE-mZ-9LM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

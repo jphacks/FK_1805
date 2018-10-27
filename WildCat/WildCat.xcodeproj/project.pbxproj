@@ -33,6 +33,8 @@
 		E65CDB9C2182C8F500D8083A /* AddPatternViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E65CDB9B2182C8F500D8083A /* AddPatternViewController.swift */; };
 		E65CDBA02182CA7800D8083A /* TextViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E65CDB9F2182CA7800D8083A /* TextViewViewController.swift */; };
 		E6D422EC2184530700E15534 /* PhotoPickerController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E6D422EB2184530700E15534 /* PhotoPickerController.storyboard */; };
+		E6D422EE2184543C00E15534 /* PhotoPickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6D422ED2184543C00E15534 /* PhotoPickerController.swift */; };
+		E6D422F02184584B00E15534 /* PhotoPickerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6D422EF2184584B00E15534 /* PhotoPickerCell.swift */; };
 		E6EAEC962183FCD5009882C9 /* PatternTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6EAEC952183FCD5009882C9 /* PatternTableViewController.swift */; };
 		E6EAEC98218400E4009882C9 /* CustomTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6EAEC97218400E4009882C9 /* CustomTextView.swift */; };
 		E6EAEC9A218429D5009882C9 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6EAEC99218429D5009882C9 /* NotificationManager.swift */; };
@@ -90,6 +92,8 @@
 		E65CDB9B2182C8F500D8083A /* AddPatternViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPatternViewController.swift; sourceTree = "<group>"; };
 		E65CDB9F2182CA7800D8083A /* TextViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextViewViewController.swift; sourceTree = "<group>"; };
 		E6D422EB2184530700E15534 /* PhotoPickerController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PhotoPickerController.storyboard; sourceTree = "<group>"; };
+		E6D422ED2184543C00E15534 /* PhotoPickerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPickerController.swift; sourceTree = "<group>"; };
+		E6D422EF2184584B00E15534 /* PhotoPickerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPickerCell.swift; sourceTree = "<group>"; };
 		E6EAEC952183FCD5009882C9 /* PatternTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatternTableViewController.swift; sourceTree = "<group>"; };
 		E6EAEC97218400E4009882C9 /* CustomTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextView.swift; sourceTree = "<group>"; };
 		E6EAEC99218429D5009882C9 /* NotificationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
@@ -215,6 +219,8 @@
 			isa = PBXGroup;
 			children = (
 				E6D422EB2184530700E15534 /* PhotoPickerController.storyboard */,
+				E6D422ED2184543C00E15534 /* PhotoPickerController.swift */,
+				E6D422EF2184584B00E15534 /* PhotoPickerCell.swift */,
 			);
 			path = PhotoPickerController;
 			sourceTree = "<group>";
@@ -364,6 +370,7 @@
 				7569B05A217B04AB0069EADB /* AppDelegate.swift in Sources */,
 				E65CDBA02182CA7800D8083A /* TextViewViewController.swift in Sources */,
 				E623539721804FBD009E0040 /* UIColor+Extension.swift in Sources */,
+				E6D422EE2184543C00E15534 /* PhotoPickerController.swift in Sources */,
 				75458DC621817F210031A97F /* LocalPhoto.swift in Sources */,
 				FB463D5D217F5EF400C6B1CC /* PhotosCollectionViewController.swift in Sources */,
 				FBEE7D312183ED9B007C4CAB /* SetAlarmViewController.swift in Sources */,
@@ -373,6 +380,7 @@
 				FBED01EE218406510034D43F /* SelectPatternTableViewController.swift in Sources */,
 				75B18821218053440081D7DE /* PhotoCell.swift in Sources */,
 				75B18825218054550081D7DE /* Photo.swift in Sources */,
+				E6D422F02184584B00E15534 /* PhotoPickerCell.swift in Sources */,
 				E6EAEC98218400E4009882C9 /* CustomTextView.swift in Sources */,
 				75D24197217F66D0007E81BD /* Pattern.swift in Sources */,
 				E6EAEC962183FCD5009882C9 /* PatternTableViewController.swift in Sources */,
