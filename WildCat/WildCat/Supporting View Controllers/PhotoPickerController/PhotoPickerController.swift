@@ -61,9 +61,18 @@ class PhotoPickerController: UIViewController, UICollectionViewDelegate, UIColle
 extension PhotoPickerController: UICollectionViewDelegateFlowLayout {
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let width: CGFloat = UIScreen.main.bounds.width / 4
+        let margin: CGFloat = 2
+        let width: CGFloat = (self.view.frame.width - margin * 2) / 3
         let height = width
         return CGSize(width: width, height: height)
+    }
+
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return CGFloat(2)
+    }
+
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return CGFloat(2)
     }
 }
 

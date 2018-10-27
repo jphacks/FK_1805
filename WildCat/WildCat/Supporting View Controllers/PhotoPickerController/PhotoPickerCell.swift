@@ -13,6 +13,6 @@ class PhotoPickerCell: UICollectionViewCell {
     @IBOutlet weak var photoImageView: UIImageView!
 
     func update(image: UIImage) {
-        self.photoImageView.image = image
+        self.photoImageView.image = image.cropping2square()
     }
 }
