@@ -129,7 +129,7 @@ class PhotosCollectionViewController: UICollectionViewController, SKPhotoBrowser
                 }
             }
         case .Save:
-            cell.imageView.image = saveImages[indexPath.item]
+            cell.imageView.image = saveImages[indexPath.item].cropping2square()
             break
         }
     
@@ -138,7 +138,7 @@ class PhotosCollectionViewController: UICollectionViewController, SKPhotoBrowser
 
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let cell = collectionView.cellForItem(at: indexPath) as! PhotoCell
-        let originImage = cell.imageView.image
+        var originImage = cell.imageView.image
         var images = [SKPhoto]()
 
         switch status {
@@ -159,6 +159,7 @@ class PhotosCollectionViewController: UICollectionViewController, SKPhotoBrowser
             browser!.initializePageIndex(indexPath.item)
             present(browser!, animated: true, completion: nil)
         case .Save:
+            originImage = saveImages[indexPath.item]
             images = saveSKPhotos
             let browser = SKPhotoBrowser(originImage: originImage ?? UIImage(), photos: images, animatedFromView: cell)
             browser.initializePageIndex(indexPath.item)
