@@ -14,23 +14,19 @@ class ListPatternTableViewController: PatternTableViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
-        self.refreshData(sender: self.refreshControl!)
+        self.refreshData()
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setup()
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(self.segueToAdd))
-        refreshControl = UIRefreshControl()
-        refreshControl?.addTarget(self, action: #selector(self.refreshData(sender:)), for: .valueChanged)
     }
 
-    @objc func refreshData(sender: UIRefreshControl) {
-        refreshControl?.beginRefreshing()
+    @objc func refreshData() {
         let data = Array(Pattern.read())
         self.patterns = data
         self.tableView.reloadData()
-        refreshControl?.endRefreshing()
     }
 
     /// set Datas

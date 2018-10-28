@@ -58,6 +58,7 @@ extension AddPatternViewController {
         if let pickedImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
             self.photoImageView.contentMode = .scaleAspectFit
             self.photoImageView.image = pickedImage
+            self.photoImageView.layer.borderWidth = 0
         }
         if let asset = info[UIImagePickerController.InfoKey.phAsset] as? PHAsset {
             self.localIdentifier = asset.localIdentifier
