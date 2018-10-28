@@ -17,8 +17,6 @@ class AlarmTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setup()
-        refreshControl = UIRefreshControl()
-        refreshControl?.addTarget(self, action: #selector(self.refreshData(sender:)), for: .valueChanged)
     }
 
     override func viewWillAppear(_ animated: Bool) {
