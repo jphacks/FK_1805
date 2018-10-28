@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.15" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="e6J-OD-C2d">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.23.1" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="e6J-OD-C2d">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.9"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.16.1"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -96,7 +96,7 @@
             </objects>
             <point key="canvasLocation" x="824.79999999999995" y="246.9265367316342"/>
         </scene>
-        <!--Set Alarm View Controller-->
+        <!--New Alarm-->
         <scene sceneID="Hdc-LN-Iv5">
             <objects>
                 <viewController id="KXk-aU-gjL" customClass="SetAlarmViewController" customModule="WildCat" customModuleProvider="target" sceneMemberID="viewController">
@@ -104,57 +104,76 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WF4-jG-jsE">
-                                <rect key="frame" x="100" y="379" width="175" height="33"/>
+                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dcO-uf-GQ1" customClass="RoundButton" customModule="WildCat" customModuleProvider="target">
+                                <rect key="frame" x="147.5" y="394" width="80" height="80"/>
                                 <color key="backgroundColor" name="ItemColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="11U-Dp-Sd7"/>
+                                    <constraint firstAttribute="width" secondItem="dcO-uf-GQ1" secondAttribute="height" multiplier="1:1" id="ViE-gQ-8We"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <color key="tintColor" name="ItemColor"/>
-                                <state key="normal" title="Save">
+                                <state key="normal" title="パターン">
                                     <color key="titleColor" name="TitleColor"/>
                                 </state>
-                                <connections>
-                                    <action selector="saveButtonTapped:" destination="KXk-aU-gjL" eventType="touchUpInside" id="wLh-BN-PqN"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dcO-uf-GQ1">
-                                <rect key="frame" x="100" y="296" width="175" height="33"/>
-                                <color key="backgroundColor" name="ItemColor"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                <color key="tintColor" name="ItemColor"/>
-                                <state key="normal" title="パターンを選択">
-                                    <color key="titleColor" name="TitleColor"/>
-                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="40"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="selectPatternAction:" destination="KXk-aU-gjL" eventType="touchUpInside" id="DkQ-pw-BVV"/>
                                 </connections>
                             </button>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="gcY-lI-zrc">
-                                <rect key="frame" x="0.0" y="30" width="375" height="216"/>
+                                <rect key="frame" x="0.0" y="30" width="375" height="212"/>
                                 <color key="backgroundColor" name="BackgroundColor"/>
                                 <color key="tintColor" name="ItemColor"/>
                                 <date key="date" timeIntervalSinceReferenceDate="562164391.78168595">
                                     <!--2018-10-25 12:46:31 +0000-->
                                 </date>
                             </datePicker>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="obH-Hu-TiZ">
+                                <rect key="frame" x="16" y="258" width="120" height="120"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="120" id="lJd-14-KGQ"/>
+                                    <constraint firstAttribute="width" secondItem="obH-Hu-TiZ" secondAttribute="height" multiplier="1:1" id="sK0-Aw-voT"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pgr-NQ-UXH">
+                                <rect key="frame" x="152" y="318" width="0.0" height="0.0"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" name="BackgroundColor"/>
                         <color key="tintColor" name="ItemColor"/>
                         <constraints>
-                            <constraint firstItem="JeB-B2-3Ol" firstAttribute="trailing" secondItem="WF4-jG-jsE" secondAttribute="trailing" constant="100" id="0Nf-fg-4Bc"/>
-                            <constraint firstItem="WF4-jG-jsE" firstAttribute="leading" secondItem="JeB-B2-3Ol" secondAttribute="leading" constant="100" id="5pj-Fw-Cgq"/>
+                            <constraint firstItem="Pgr-NQ-UXH" firstAttribute="centerY" secondItem="obH-Hu-TiZ" secondAttribute="centerY" id="4V4-ZB-Zgt"/>
                             <constraint firstItem="gcY-lI-zrc" firstAttribute="trailing" secondItem="JeB-B2-3Ol" secondAttribute="trailing" id="5qX-f2-YGu"/>
-                            <constraint firstItem="JeB-B2-3Ol" firstAttribute="trailing" secondItem="dcO-uf-GQ1" secondAttribute="trailing" constant="100" id="HBe-Qx-l5W"/>
+                            <constraint firstItem="Pgr-NQ-UXH" firstAttribute="leading" secondItem="obH-Hu-TiZ" secondAttribute="trailing" constant="16" id="7qj-tl-FJZ"/>
                             <constraint firstItem="gcY-lI-zrc" firstAttribute="top" secondItem="JeB-B2-3Ol" secondAttribute="top" constant="30" id="KVe-rI-Wky"/>
-                            <constraint firstItem="dcO-uf-GQ1" firstAttribute="leading" secondItem="JeB-B2-3Ol" secondAttribute="leading" constant="100" id="QyT-SH-PeT"/>
+                            <constraint firstItem="dcO-uf-GQ1" firstAttribute="top" secondItem="obH-Hu-TiZ" secondAttribute="bottom" constant="16" id="S86-E2-nMH"/>
+                            <constraint firstItem="obH-Hu-TiZ" firstAttribute="top" secondItem="gcY-lI-zrc" secondAttribute="bottom" constant="16" id="SNN-z6-rgS"/>
                             <constraint firstItem="gcY-lI-zrc" firstAttribute="leading" secondItem="JeB-B2-3Ol" secondAttribute="leading" id="Tgi-S8-RxL"/>
-                            <constraint firstItem="dcO-uf-GQ1" firstAttribute="top" secondItem="gcY-lI-zrc" secondAttribute="bottom" constant="50" id="VEj-eK-Rz7"/>
-                            <constraint firstItem="WF4-jG-jsE" firstAttribute="top" secondItem="dcO-uf-GQ1" secondAttribute="bottom" constant="50" id="mk9-HQ-Im1"/>
+                            <constraint firstItem="JeB-B2-3Ol" firstAttribute="bottom" secondItem="dcO-uf-GQ1" secondAttribute="bottom" constant="80" id="XQ5-1M-L8e"/>
+                            <constraint firstItem="dcO-uf-GQ1" firstAttribute="centerX" secondItem="JTI-iG-TiG" secondAttribute="centerX" id="i04-vp-Cho"/>
+                            <constraint firstItem="obH-Hu-TiZ" firstAttribute="leading" secondItem="JeB-B2-3Ol" secondAttribute="leading" constant="16" id="rdY-nM-xYc"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="JeB-B2-3Ol"/>
                     </view>
+                    <navigationItem key="navigationItem" title="New Alarm" id="Wae-cZ-k3j">
+                        <barButtonItem key="rightBarButtonItem" title="完了" id="0RE-Da-lpM">
+                            <connections>
+                                <action selector="saveButtonTapped:" destination="KXk-aU-gjL" id="5Ms-ii-UVq"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="saveButton" destination="WF4-jG-jsE" id="zjZ-iK-RJJ"/>
+                        <outlet property="patternImageView" destination="obH-Hu-TiZ" id="MFW-Sp-gd3"/>
+                        <outlet property="patternLabel" destination="Pgr-NQ-UXH" id="yDP-L4-AcV"/>
                         <outlet property="timePicker" destination="gcY-lI-zrc" id="Rr9-Cd-Z3w"/>
                     </connections>
                 </viewController>
