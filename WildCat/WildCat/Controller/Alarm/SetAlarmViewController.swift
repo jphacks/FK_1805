@@ -40,11 +40,13 @@ class SetAlarmViewController: UIViewController, PatternTableViewControllerDelega
     // MARK: - Actions of Buttons
 
     @IBAction func saveButtonTapped(_ sender: Any) {
-        let alarm = Alarm()
-        alarm.id = Int(arc4random())
-        alarm.date = timePicker.date
-        alarm.pattern = self.new
-        Alarm.add(alarm: alarm)
-        self.navigationController?.popViewController(animated: true)
+        if self.new != nil {
+            let alarm = Alarm()
+            alarm.id = Int(arc4random())
+            alarm.date = timePicker.date
+            alarm.pattern = self.new
+            Alarm.add(alarm: alarm)
+            self.navigationController?.popViewController(animated: true)
+        }
     }
 }
