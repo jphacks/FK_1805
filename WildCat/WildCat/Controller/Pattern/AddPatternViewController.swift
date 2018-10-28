@@ -27,7 +27,7 @@ class AddPatternViewController: TextViewViewController, UIImagePickerControllerD
         let identifier = asset.localIdentifier
         self.localIdentifier = identifier
         LocalPhoto.load(localIdentifer: identifier) { (image) in
-            self.photoImageView.image = image
+            self.photoImageView.image = image?.cropping2square()
         }
     }
     
