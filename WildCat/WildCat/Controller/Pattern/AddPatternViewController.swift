@@ -9,18 +9,16 @@
 import UIKit
 import Photos
 
-class AddPatternViewController: TextViewViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, PhotoPickerControllerDelegate {
+class AddPatternViewController: TextViewViewController, PhotoPickerControllerDelegate {
 
     @IBOutlet weak private var photoImageView: UIImageView!
     @IBOutlet weak private var messageTextView: CustomTextView!
-    private let imagePicker = UIImagePickerController()
     private var localIdentifier: String?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.messageTextView.delegate = self
         self.setUpNotificationForTextView()
-        self.imagePicker.delegate = self
     }
 
     func didSelectPhoto(asset: PHAsset) {
@@ -38,7 +36,14 @@ class AddPatternViewController: TextViewViewController, UIImagePickerControllerD
     }
 
     @IBAction func addPatternAction(_ sender: Any) {
-        guard let localIdentifier = self.localIdentifier else { return }
+        guard let localIdentifier = self.localIdentifier else {
+            self.showAlert(title: "画像なし", message: "画像を選択してください。")
+            return
+        }
+        if self.messageTextView.text.isEmpty {
+            self.showAlert(title: "空のメッセージ", message: "メッセージを入力して下さい。")
+            return
+        }
         let new = Pattern.init()
         new.id = Int(arc4random())
         new.message = self.messageTextView.text
@@ -53,20 +58,4 @@ class AddPatternViewController: TextViewViewController, UIImagePickerControllerD
 }
 
 extension AddPatternViewController {
-
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        if let pickedImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
-            self.photoImageView.contentMode = .scaleAspectFit
-            self.photoImageView.image = pickedImage
-            self.photoImageView.layer.borderWidth = 0
-        }
-        if let asset = info[UIImagePickerController.InfoKey.phAsset] as? PHAsset {
-            self.localIdentifier = asset.localIdentifier
-        }
-        dismiss(animated: true, completion: nil)
-    }
-
-    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-        dismiss(animated: true, completion: nil)
-    }
 }
