@@ -18,7 +18,7 @@ class Alarm: Object {
 extension Alarm {
     class func read() -> Results<Alarm> {
         let realm = try! Realm()
-        return realm.objects(Alarm.self)
+        return realm.objects(Alarm.self).sorted(byKeyPath: "date")
     }
 
     class func add(alarm: Alarm) {
