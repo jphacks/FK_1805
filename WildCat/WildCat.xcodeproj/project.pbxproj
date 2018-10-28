@@ -34,6 +34,10 @@
 		E623539721804FBD009E0040 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E623539621804FBD009E0040 /* UIColor+Extension.swift */; };
 		E65CDB9C2182C8F500D8083A /* AddPatternViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E65CDB9B2182C8F500D8083A /* AddPatternViewController.swift */; };
 		E65CDBA02182CA7800D8083A /* TextViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E65CDB9F2182CA7800D8083A /* TextViewViewController.swift */; };
+		E6D422EE2184543C00E15534 /* PhotoPickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6D422ED2184543C00E15534 /* PhotoPickerController.swift */; };
+		E6D422F02184584B00E15534 /* PhotoPickerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6D422EF2184584B00E15534 /* PhotoPickerCell.swift */; };
+		E6D422F2218467D500E15534 /* PhotoPickerController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E6D422F1218467D500E15534 /* PhotoPickerController.xib */; };
+		E6D422F42184692A00E15534 /* PhotoPickerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E6D422F32184692A00E15534 /* PhotoPickerCell.xib */; };
 		E6EAEC962183FCD5009882C9 /* PatternTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6EAEC952183FCD5009882C9 /* PatternTableViewController.swift */; };
 		E6EAEC98218400E4009882C9 /* CustomTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6EAEC97218400E4009882C9 /* CustomTextView.swift */; };
 		E6EAEC9A218429D5009882C9 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6EAEC99218429D5009882C9 /* NotificationManager.swift */; };
@@ -92,6 +96,10 @@
 		E623539621804FBD009E0040 /* UIColor+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		E65CDB9B2182C8F500D8083A /* AddPatternViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPatternViewController.swift; sourceTree = "<group>"; };
 		E65CDB9F2182CA7800D8083A /* TextViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextViewViewController.swift; sourceTree = "<group>"; };
+		E6D422ED2184543C00E15534 /* PhotoPickerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPickerController.swift; sourceTree = "<group>"; };
+		E6D422EF2184584B00E15534 /* PhotoPickerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPickerCell.swift; sourceTree = "<group>"; };
+		E6D422F1218467D500E15534 /* PhotoPickerController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhotoPickerController.xib; sourceTree = "<group>"; };
+		E6D422F32184692A00E15534 /* PhotoPickerCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhotoPickerCell.xib; sourceTree = "<group>"; };
 		E6EAEC952183FCD5009882C9 /* PatternTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatternTableViewController.swift; sourceTree = "<group>"; };
 		E6EAEC97218400E4009882C9 /* CustomTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextView.swift; sourceTree = "<group>"; };
 		E6EAEC99218429D5009882C9 /* NotificationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
@@ -210,8 +218,20 @@
 				E65CDB9F2182CA7800D8083A /* TextViewViewController.swift */,
 				E6EAEC97218400E4009882C9 /* CustomTextView.swift */,
 				E6EAEC952183FCD5009882C9 /* PatternTableViewController.swift */,
+				E6D422EA218452F600E15534 /* PhotoPickerController */,
 			);
 			path = "Supporting View Controllers";
+			sourceTree = "<group>";
+		};
+		E6D422EA218452F600E15534 /* PhotoPickerController */ = {
+			isa = PBXGroup;
+			children = (
+				E6D422ED2184543C00E15534 /* PhotoPickerController.swift */,
+				E6D422F1218467D500E15534 /* PhotoPickerController.xib */,
+				E6D422EF2184584B00E15534 /* PhotoPickerCell.swift */,
+				E6D422F32184692A00E15534 /* PhotoPickerCell.xib */,
+			);
+			path = PhotoPickerController;
 			sourceTree = "<group>";
 		};
 		FB463D56217B1FFE00C6B1CC /* Controller */ = {
@@ -317,9 +337,11 @@
 				75B18823218053BD0081D7DE /* Photo.json in Resources */,
 				7569B064217B04AE0069EADB /* LaunchScreen.storyboard in Resources */,
 				FBED01F221841D0F0034D43F /* PatternTableViewCell.xib in Resources */,
+				E6D422F2218467D500E15534 /* PhotoPickerController.xib in Resources */,
 				FB463D65217F5F5F00C6B1CC /* PatternTableViewController.storyboard in Resources */,
 				7569B061217B04AE0069EADB /* Assets.xcassets in Resources */,
 				FB463D63217F5F5200C6B1CC /* PhotosCollectionViewController.storyboard in Resources */,
+				E6D422F42184692A00E15534 /* PhotoPickerCell.xib in Resources */,
 				FB463D61217F5F3100C6B1CC /* AlarmTableViewController.storyboard in Resources */,
 				7569B05F217B04AB0069EADB /* Main.storyboard in Resources */,
 			);
@@ -360,6 +382,7 @@
 				E65CDBA02182CA7800D8083A /* TextViewViewController.swift in Sources */,
 				7574B9BD21845F2200D214F4 /* UIImageView+Extension.swift in Sources */,
 				E623539721804FBD009E0040 /* UIColor+Extension.swift in Sources */,
+				E6D422EE2184543C00E15534 /* PhotoPickerController.swift in Sources */,
 				75458DC621817F210031A97F /* LocalPhoto.swift in Sources */,
 				FB463D5D217F5EF400C6B1CC /* PhotosCollectionViewController.swift in Sources */,
 				FBEE7D312183ED9B007C4CAB /* SetAlarmViewController.swift in Sources */,
@@ -369,6 +392,7 @@
 				FBED01EE218406510034D43F /* SelectPatternTableViewController.swift in Sources */,
 				75B18821218053440081D7DE /* PhotoCell.swift in Sources */,
 				75B18825218054550081D7DE /* Photo.swift in Sources */,
+				E6D422F02184584B00E15534 /* PhotoPickerCell.swift in Sources */,
 				E6EAEC98218400E4009882C9 /* CustomTextView.swift in Sources */,
 				75D24197217F66D0007E81BD /* Pattern.swift in Sources */,
 				E6EAEC962183FCD5009882C9 /* PatternTableViewController.swift in Sources */,
@@ -522,7 +546,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = CWW3CV2X72;
+				DEVELOPMENT_TEAM = 9886BK756P;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -545,7 +569,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = CWW3CV2X72;
+				DEVELOPMENT_TEAM = 9886BK756P;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
