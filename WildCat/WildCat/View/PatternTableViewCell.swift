@@ -24,6 +24,6 @@ class PatternTableViewCell: UITableViewCell {
 
     func update(message: String, photo: UIImage) {
         self.messageLabel.text = message
-        self.photoImage.image = photo
+        self.photoImage.image = photo.cropping2square()
     }
 }
