@@ -46,7 +46,7 @@ class PhotosCollectionViewController: UICollectionViewController, SKPhotoBrowser
 
     private func localRefresh() {
         LocalPhoto.load { (images) in
-            self.saveImages = images
+            self.saveImages  = images
             self.saveSKPhotos = []
             for image in images {
                 self.saveSKPhotos.append(SKPhoto.photoWithImage(image))
