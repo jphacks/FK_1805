@@ -2,8 +2,8 @@
 
 # 開発
 ## 環境
-Xcode 10.1 beta
-Swift 4.2
+- Xcode 10.1 beta
+- Swift 4.2
 
 ## ライブラリ
 
