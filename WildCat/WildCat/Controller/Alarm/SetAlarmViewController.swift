@@ -26,7 +26,7 @@ class SetAlarmViewController: UIViewController, PatternTableViewControllerDelega
         self.new = pattern
         self.patternLabel.text = self.new?.message
         LocalPhoto.load(localIdentifer: (self.new?.imagePath)!) { (image) in
-            self.patternImageView.image = image
+            self.patternImageView.image = image?.cropping2square()
         }
     }
 

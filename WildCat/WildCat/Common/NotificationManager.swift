@@ -26,10 +26,15 @@ class NotificationManager:NSObject, NotificationManagerInterface, UNUserNotifica
             let content = UNMutableNotificationContent()
             content.title = "まいちゃん"
             content.body = pattern.message
-            if let remote = remotePath.first {
-                let url = URL(string: remote.remotePath)!
-                if let attempt = try? UNNotificationAttachment(identifier: id, url: url, options: nil) {
+            if remotePath.first != nil {
+//                let url = URL(string: remote.remotePath)!
+                let url = Bundle.main.url(forResource: "she", withExtension: "png")
+                print(url!.description ?? "error")
+                do {
+                    let attempt = try UNNotificationAttachment(identifier: "image", url: url!, options: nil)
                     content.attachments = [attempt]
+                } catch {
+                    print(error)
                 }
             }
             /// set time
