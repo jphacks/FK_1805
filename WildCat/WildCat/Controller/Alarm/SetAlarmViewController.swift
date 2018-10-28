@@ -9,17 +9,12 @@
 import UIKit
 
 class SetAlarmViewController: UIViewController, PatternTableViewControllerDelegate {
-
-
-
-    // MARK: - Propaties
     
     @IBOutlet weak var timePicker: UIDatePicker!
-    @IBOutlet weak var saveButton: UIButton!
+    @IBOutlet weak var patternImageView: UIImageView!
+    @IBOutlet weak var patternLabel: UILabel!
 
     var new: Pattern?
-
-    // MARK: - View Life Cycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,6 +24,10 @@ class SetAlarmViewController: UIViewController, PatternTableViewControllerDelega
 
     func didFinishChoosePattern(pattern: Pattern) {
         self.new = pattern
+        self.patternLabel.text = self.new?.message
+        LocalPhoto.load(localIdentifer: (self.new?.imagePath)!) { (image) in
+            self.patternImageView.image = image
+        }
     }
 
     @IBAction func selectPatternAction(_ sender: Any) {

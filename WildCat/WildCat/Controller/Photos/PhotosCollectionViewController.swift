@@ -86,7 +86,7 @@ class PhotosCollectionViewController: UICollectionViewController, SKPhotoBrowser
 //        }
 
         // RemoteURL
-        let url = URL(string: "http://13.115.170.124:3000/api/images/?size=30&offset=\(page)")!
+        let url = URL(string: "http://13.115.170.124/api/images/?size=30&offset=\(page)")!
         URLSession.shared.dataTask(with: url) { (data, _, error) in
             if let data = data {
                 do {
